@@ -39,7 +39,8 @@
 *** TODO How to [0/1]
 
    - [ ] See agenda view with all todos from this file
-   - [ ] Move line across headers   
+   - [ ] Move line across headers, beyond own section    
+   - [ ] Close agenda buffer
 
 *** SOMEDAY Not critical [0/8]
 
@@ -62,21 +63,6 @@
    - [X] Sort this list based on completion is C-c ^
 
   
-*** CANCELLED Not todo
-
-   It is important to state what is outside of scope of project -
-   to save time and mental energy. Topics I try to avoid now:
-
-   - git in emacs, magit
-   - сheck е-mail
-   - edit config extensively
-   - learn lisp 
-   - vim, neovim, Emacs Evil mode
-   - ergomode and fancy configs
-   - Emacs derivatives (spacemacs, doom)
-   - GUI mode on Windows WSL
-
-
 ** Editing in orgmode
 *** <TAB> is all you need
 
@@ -101,11 +87,10 @@
 
   SCHEDULED: <2021-08-15 Sun>
 
+  As [[https://orgmode.org/guide/Creating-Timestamps.html#Creating-Timestamps][guide]] suggests:
 
-As [[https://orgmode.org/guide/Creating-Timestamps.html#Creating-Timestamps][guide]] suggests:
-
- - C-c . for timestamp
- - S-arrow for change
+    - C-c . for timestamp
+    - S-arrow for change
 
 *** Checkboxes
 
@@ -119,7 +104,9 @@ Sample cjekbox list [2/3], [66%]:
 - [X] Item 2
 - [ ] Item 3
 
-  
+*** Agenda
+
+ - [ ] C-a
 
 ** Emacs configuration
 *** Where is the config?
