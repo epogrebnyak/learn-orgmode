@@ -1,0 +1,221 @@
+#+TITLE:     Learn Emacs Org-Mode
+#+AUTHOR:    Евгений Погребняк
+#+EMAIL:     e.pogrenyak@gmail.com
+#+SEQ_TODO: WAITING(w) TODO(t) WIP(p) SOMEDAY(s) | DONE(d) CANCELLED(f)
+
+* My Emacs workflow  
+
+** Minimal pipeline
+
+   - Install emacs on WSL via ==sudo apt-get install emacs== 
+   - Launch emacs with ==emacs== command
+   - Open a file with F10 menu
+   - Edit file using org mode (various operations)
+   - Save file *C-x C-s*
+   - Exit Emacs *C-x C-c*
+
+** Implemented improvements [4/4]
+
+   - [X] F10 may need Fnlock to work on Lenovo - use Fn-Esc.
+   - [X] Configure terminal to resolve [[https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict][key binding conflicts]] like Ctrl-C. See also ==org-disputed-keys== in [[https://orgmode.org/manual/Conflicts.html][Orgmode conflicts]].
+   - [X] Launch emacs with filename ==emacs -nw EMACS.org==
+   - [X] Use Shift for selection and CUA mode with more familiar key bindings. 
+ 
+** Next steps
+
+*** TODO Questions  [0/1]
+
+   - [ ] What does bottom line with ==-UUU(DOS)**--F1== mean?
+  
+*** TODO How to [0/1]
+
+   - [ ] See agenda view with all todos from this file
+ 
+*** DONE Finshed tasks [5/5]
+
+   - [X] * Use sterisk to add difficulty level / priority for plain text 
+   - [X] Add more cycling todo tags ==#+SEQ_TODO:== 
+   - [X] Create a link
+   - [X] Make a selection and copy selection 
+   - [X] Sort this list based on completion is C-c ^
+
+*** SOMEDAY Not critical [0/8]
+
+   - [ ] Recalulcate list stats
+   - [ ] What is the difference between scheduled and deadline?
+   - [ ] Export from orgmode to other formats (pandoc)   
+   - [ ] Add timestamp with current time 
+   - [ ] Autoreload if file changed
+   - [ ] Change selection color to lightblue (I did, but it did not save)
+   - [ ] Move line across headers 
+   - [ ] View calendar
+
+*** CANCELLED Not todo
+
+   It is important to state what is outside of scope of project -
+   to save time and mental energy. Topics I try to avoid now:
+
+   - git in emacs, magit
+   - сheck е-mail
+   - edit config extensively
+   - learn lisp 
+   - vim, neovim, Emacs Evil mode
+   - ergomode and fancy configs
+   - Emacs derivatives (spacemacs, doom)
+   - GUI mode on Windows WSL
+
+
+** WIP Small reference - concepts and notation
+
+*** Concepts:
+
+ - "buffer" - a screen that represents a file or Emacs own 
+
+*** Notation:
+
+  - * is always a header
+  - properties box has :NAME: and :END:     
+
+
+* Emacs - editing in orgmode
+
+** <TAB> is all you need
+
+ - TAB shows/hides headers (quite powerful!)
+ - Shift-TAB opens all headers 
+
+** Editing a hyperlink
+
+  Use ==[[url][]]== syntax or C-c C-l
+  TODO: hyperlinks inside documents.
+
+** Getting around headers
+
+ - Alt + left rightor  changes header level
+ - Alt + up or down moves lines around
+ - Shift - arrow: 
+   - changes list numbering style
+   - cycles TODO-DONE in header
+   - selects in CUA mode
+
+** Use timestamps
+
+  SCHEDULED: <2021-08-15 Sun>
+
+
+As [[https://orgmode.org/guide/Creating-Timestamps.html#Creating-Timestamps][guide]] suggests:
+
+ - C-c . for timestamp
+ - S-arrow for change
+
+** Checkboxes
+
+- You must type [0/0] or [0%] for checkbox
+- Only X counts for completion, not `x` or `+`
+- C-c C-c toggles and recalculates
+- Check Rainer König video  [[https://www.youtube.com/watch?v=gvgfmED8RD4&list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE&index=5&t=444s][OrgMode E01S05: Checklists]]
+ 
+Sample cjekbox list [2/3], [66%]:
+- [X] Item 1
+- [X] Item 2
+- [ ] Item 3
+
+
+
+* Emacs configuration
+
+** Where is the config?
+
+  - ~/.emacs is a file 
+  - ~/.emacs.d is a directory
+
+** Setting org-support-shift-select and CUA options
+
+  - Selecting with Shift is already built-in part of Emacs, but not org-mode
+  - Start with 'M-x customize' to find options
+  - Set CUA is part of F10 menu
+
+
+* WIP Links
+** Videos
+*** Essential
+
+ - [[https://www.youtube.com/watch?v=oJTwQvgfgMM][Carsten Dominik keynote (2008)]]
+ - [[https://www.youtube.com/playlist?list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE][Rainer König lesson series]]
+
+*** Extension
+
+ - [[https://www.youtube.com/watch?v=JWD1Fpdd4Pc][Evil Mode: Or, How I Learned to Stop Worrying and Love Emacs]]
+
+** Advice
+
+- Key binding conflict on WSL
+  https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict
+
+- Reload on file change:
+  https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer?newreg=a3feb7dd0515464f962f420449b8f1a5
+
+** Blogs and success stories
+*** Why Orgmode:
+
+- https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html
+
+
+* DONE Install 
+  
+ - Running in cmder bash (ubuntu) with F10 to access menu
+ - Windows MSI (bad russian font)
+ - VSCode extension (no agenda view)
+ 
+
+* More prose
+
+** DONE My goals for using Emacs: how can Emacs boost my productivity?
+
+   Using a new productivity tool may actually divert you from solving real problems.
+   I admit, I've done this before with other tools.
+ 
+   Reality check - actions that indicate progress in problem-solving:
+
+     - drafting and sending out documents more often
+     - collecting feedback
+     - assigning tasks to someone 
+     - controlling results
+     - billing and collecting payments
+     - backlog and debt of promises reduce
+
+
+  
+
+** CANCELLED Motivation                                                     
+
+ Starting points:
+
+  - I'm ok with markdown, rst, pandoc
+  - I do work part in console (WSL Ubuntu)
+  - I use git/github for saving my work
+  - I run a few sites static site generators (Hugo, mkdocs)
+  - Have Notepad++ (text encodings), sublime (aesthetics) and VS Code installed 
+  - Sympathetic to lisp
+
+ Intents:
+
+  - Not a very organised person (my wife has a better Evernote and Google calendar than myself)
+  - I like typing and working with cheklists, including Github-style `[x]`
+  - Org-mode seems a powerful system for organising work
+  - Just starting Emacs is frustrating - can't do anything, arrh!
+
+ Hate:
+
+  - finding way out of vim `wq:`
+  - shortcut conflicts in Windows
+
+
+** SOMEDAY About TODOs 
+
+   - text editors: neovim vs emacs
+   - text-based todos: org-mode, todo.txt
+   - GUI todos: Evernote, Remember-the-Milk 
+   - writing a todo app: "classic" programming task 
+   - pshychology of self-organisation and procrastination
+   - delegate and say no  
