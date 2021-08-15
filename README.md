@@ -2,7 +2,7 @@
 
 ### Minimal pipeline
 
-  - Install emacs on WSL via `=sudo apt-get install emacs=`
+  - Install emacs on WSL with `sudo apt-get install emac=`
   - Launch emacs with `=emacs=` command
   - Open a file with F10 menu
   - Edit file using org mode (various operations)
@@ -32,7 +32,7 @@
 
 ### TODO Questions \[0/1\]
 
-  - \[ \] What does bottom line with ==-UUU(DOS)\*\*–F1== mean?
+  - \[ \] What does bottom line with `-UUU(DOS)**--F1` mean?
   - \[ \] How to remove it?
 
 ### TODO How to \[0/1\]
@@ -57,7 +57,7 @@
 
   - \[X\] \* Use sterisk to add difficulty level / priority for plain
     text
-  - \[X\] Add more cycling todo tags `=#+SEQ_TODO:=`
+  - \[X\] Add more cycling todo tags `#+SEQ_TODO:`
   - \[X\] Archive tasks
   - \[X\] Create a link
   - \[X\] Make a selection and copy selection
@@ -72,8 +72,7 @@
 
 ### Editing a hyperlink
 
-Use ==\[\[url\]\[\]\]== syntax or C-c C-l TODO: hyperlinks inside
-documents.
+Use `[[url][]]` syntax or C-c C-l TODO: hyperlinks inside documents.
 
 ### Getting around headers
 
@@ -111,7 +110,8 @@ Sample cjekbox list \[2/3\], \[66%\]:
 
 ### Agenda
 
-  - \[ \] C-a
+  - Use F10 and menu
+  - C-a must be configured
 
 ## Emacs configuration
 
