@@ -1,4 +1,4 @@
-#+TITLE:     Learn Emacs Org-Mode
+;; #+TITLE:     Learn Emacs Org-Mode
 #+AUTHOR:    Евгений Погребняк
 #+EMAIL:     e.pogrenyak@gmail.com
 #+SEQ_TODO: WAITING(w) TODO(t) WIP(p) SOMEDAY(s) | DONE(d) CANCELLED(f)
@@ -14,7 +14,7 @@
    - Save file *C-x C-s*
    - Exit Emacs *C-x C-c*
 
-** Implemented improvements [4/4]
+** Improvements [4/4]
 
    - [X] F10 may need Fnlock to work on Lenovo - use Fn-Esc.
    - [X] Configure terminal to resolve [[https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict][key binding conflicts]] like Ctrl-C. See also ==org-disputed-keys== in [[https://orgmode.org/manual/Conflicts.html][Orgmode conflicts]].
@@ -65,8 +65,7 @@
    - GUI mode on Windows WSL
 
 
-** WIP Small reference - concepts and notation
-
+** Small reference
 *** Concepts:
 
  - "buffer" - a screen that represents a file or Emacs own 
