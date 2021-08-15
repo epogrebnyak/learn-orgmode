@@ -1,26 +1,26 @@
-;; #+TITLE:     Learn Emacs Org-Mode
 #+AUTHOR:    Евгений Погребняк
+#+TITLE:     Learn Emacs Org-Mode
 #+EMAIL:     e.pogrenyak@gmail.com
 #+SEQ_TODO: WAITING(w) TODO(t) WIP(p) SOMEDAY(s) | DONE(d) CANCELLED(f)
 
-* My Emacs workflow  
-** Minimal pipeline
+** My Emacs workflow  
+*** Minimal pipeline
 
-   - Install emacs on WSL via ==sudo apt-get install emacs== 
-   - Launch emacs with ==emacs== command
-   - Open a file with F10 menu
-   - Edit file using org mode (various operations)
-   - Save file *C-x C-s*
-   - Exit Emacs *C-x C-c*
+    - Install emacs on WSL via ==sudo apt-get install emacs== 
+    - Launch emacs with ==emacs== command
+    - Open a file with F10 menu
+    - Edit file using org mode (various operations)
+    - Save file *C-x C-s*
+    - Exit Emacs *C-x C-c*
 
-** Improvements [4/4]
+*** Improvements [4/4]
 
-   - [X] F10 may need Fnlock to work on Lenovo - use Fn-Esc.
-   - [X] Configure terminal to resolve [[https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict][key binding conflicts]] like Ctrl-C. See also ==org-disputed-keys== in [[https://orgmode.org/manual/Conflicts.html][Orgmode conflicts]].
-   - [X] Launch emacs with filename ==emacs -nw EMACS.org==
-   - [X] Use Shift for selection and CUA mode with more familiar key bindings. 
+    - [X] F10 may need Fnlock to work on Lenovo - use Fn-Esc.
+    - [X] Configure terminal to resolve [[https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict][key binding conflicts]] like Ctrl-C. See also ==org-disputed-keys== in [[https://orgmode.org/manual/Conflicts.html][Orgmode conflicts]].
+    - [X] Launch emacs with filename ==emacs -nw EMACS.org==
+    - [X] Use Shift for selection and CUA mode with more familiar key bindings. 
  
-** Next steps
+*** Next steps
 
 *** TODO Questions  [0/1]
 
@@ -64,18 +64,18 @@
    - GUI mode on Windows WSL
 
 
-** Small reference
-*** Concepts:
+*** Small reference
+**** Concepts:
 
  - "buffer" - a screen that represents a file or Emacs own 
 
-*** Notation:
+**** Notation:
 
   - * is always a header
   - properties box has :NAME: and :END:     
 
 
-* Emacs - editing in orgmode
+** Emacs - editing in orgmode
 
 ** <TAB> is all you need
 
@@ -120,7 +120,7 @@ Sample cjekbox list [2/3], [66%]:
 
 
 
-* Emacs configuration
+** Emacs configuration
 
 ** Where is the config?
 
@@ -134,7 +134,7 @@ Sample cjekbox list [2/3], [66%]:
   - Set CUA is part of F10 menu
 
 
-* WIP Links
+** WIP Links
 ** Videos
 *** Essential
 
@@ -159,16 +159,16 @@ Sample cjekbox list [2/3], [66%]:
 - https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html
 
 
-* DONE Install 
+** DONE Install 
   
  - Running in cmder bash (ubuntu) with F10 to access menu
  - Windows MSI (bad russian font)
  - VSCode extension (no agenda view)
  
 
-* More prose
+** More prose
 
-** DONE My goals for using Emacs: how can Emacs boost my productivity?
+*** DONE My goals for using Emacs: how can Emacs boost my productivity?
 
    Using a new productivity tool may actually divert you from solving real problems.
    I admit, I've done this before with other tools.
@@ -185,7 +185,7 @@ Sample cjekbox list [2/3], [66%]:
 
   
 
-** CANCELLED Motivation                                                     
+*** CANCELLED Motivation                                                     
 
  Starting points:
 
@@ -209,7 +209,7 @@ Sample cjekbox list [2/3], [66%]:
   - shortcut conflicts in Windows
 
 
-** SOMEDAY About TODOs 
+*** SOMEDAY About TODOs 
 
    - text editors: neovim vs emacs
    - text-based todos: org-mode, todo.txt
