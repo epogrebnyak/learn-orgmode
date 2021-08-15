@@ -4,7 +4,6 @@
 #+SEQ_TODO: WAITING(w) TODO(t) WIP(p) SOMEDAY(s) | DONE(d) CANCELLED(f)
 
 * My Emacs workflow  
-
 ** Minimal pipeline
 
    - Install emacs on WSL via ==sudo apt-get install emacs== 
