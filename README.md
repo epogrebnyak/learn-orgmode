@@ -2,8 +2,8 @@
 
 ### Minimal pipeline
 
-  - Install emacs on WSL with `sudo apt-get install emac=`
-  - Launch emacs with `=emacs=` command
+  - Install emacs on WSL with `sudo apt-get install emacs`
+  - Launch emacs with `emacs` command
   - Open a file with F10 menu
   - Edit file using org mode (various operations)
   - Save file **C-x C-s**
@@ -22,9 +22,9 @@
   - \[X\] F10 may need Fnlock to work on Lenovo - use Fn-Esc.
   - \[X\] Configure terminal to resolve [key binding
     conflicts](https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict)
-    like Ctrl-C. See also `=org-disputed-keys=` in [Orgmode
+    like Ctrl-C. See also `org-disputed-keys` in [Orgmode
     conflicts](https://orgmode.org/manual/Conflicts.html).
-  - \[X\] Launch emacs with filename `=emacs -nw EMACS.org=`
+  - \[X\] Launch emacs with filename `emacs -nw EMACS.org`
   - \[X\] Use Shift for selection and CUA mode with more familiar key
     bindings.
 
@@ -125,7 +125,7 @@ Sample cjekbox list \[2/3\], \[66%\]:
   - Selecting with Shift is already built-in part of Emacs, but not
     org-mode
   - Start with 'M-x customize' to find options
-  - Set CUA is part of F10 menu
+  - Setting CUA is part of F10 menu
 
 ## Small reference
 
