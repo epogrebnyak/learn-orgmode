@@ -1,13 +1,22 @@
 #+AUTHOR:    Евгений Погребняк
 #+TITLE:     Learning Emacs Org-Mode
 #+EMAIL:     e.pogrenyak@gmail.com
-#+SEQ_TODO: WAITING(w) TODO(t) WIP(p) SOMEDAY(s) | DONE(d) CANCELLED(f)
+#+SEQ_TODO: WAITING(w) TODO(t) WIP(p) NEED_HELP(h) SOMEDAY(s) | DONE(d) CANCELLED(f)
 #+ARCHIVE: ARCHIVE.org::
 
 * About this file
 
-- I add new things I learn about Emacs and orgmode here.
-- I formulate questions about where I stumbled, marked :WIP:
+What is here:
+
+- I add new things I learn about Emacs and orgmode in this document.
+- I formulate questions about actions where I stumbled, marked =WIP=, =HELP_NEEDED=, =QUESTION= and similar.
+
+My intents:
+
+- My current goal is better control of todo's with minimal learning of emacs orgmode.
+- Editing configuration extensively, programming in elisp, using spacemacs or emacs-doom,
+  using org-roam are not priorities for me now.
+
 
 * Starting Emacs
 ** Minimal pipeline
@@ -30,123 +39,142 @@
 ** Improvements
 
   - F10 may need Fnlock to work on Lenovo - use Fn-Esc.
-  - Configure terminal to resolve [[https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict][key binding conflicts]] like Ctrl-C. See also =org-disputed-keys= in [[https://orgmode.org/manual/Conflicts.html][Orgmode conflicts]].
+  - Configure terminal to resolve [[https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict][key binding conflicts]] like Ctrl-C.
   - Launch emacs with filename =emacs -nw README.org=
-  - Use Shift for selection and CUA mode with more familiar key bindings. 
   - =pandoc README.org -f org -t gfm -o README.md= (see pandoc [[https://pandoc.org/MANUAL.html#general-options][formats list]])
 
-** Emacs configuration
-*** Where is the config?
+*** DONE Set =org-support-shift-select= and CUA option
+
+  - Selecting with Shift is already built-in part of Emacs, but not org-mode
+  - Start with 'M-x customize' to find options about Shift selection
+  - Set CUA (Ctrl-Z/X/C/V) as part of F10 menu
+  - See also =org-disputed-keys= in [[https://orgmode.org/manual/Conflicts.html][Orgmode conflicts]].
+
+*** NEED_HELP Screen bottomline 
+    
+    - What does bottom line with =-UUU(DOS)**--F1= mean? 
+    - What is it called? 
+    - How to remove it?
+
+*** NEED_HELP Where is the config?
 
     - ~/.emacs is a file 
     - ~/.emacs.d is a directory
     - QUESTION: what is the difference? 
 
-*** Set =org-support-shift-select= and CUA option
-  
-    - Selecting with Shift is already built-in part of Emacs, but not org-mode
-    - Start with 'M-x customize' to find options about Shift selection
-    - Set CUA (Ctrl-Z/X/C/V) as part of F10 menu
+*** WIP Using X410 video system                                       
 
-* Questions                                                             :WIP:
-*** Attempting X410 video system                                        
+ - [[https://emacsredux.com/blog/2020/09/23/using-emacs-on-windows-with-wsl2/][Original article with X410 recommendation]] 
+ - On WSL 1 works at [[https://x410.dev/cookbook/wsl/using-x410-with-wsl2/][127.0.0.1]]
+ - One must buy X410 from Windows store (USD10 with discount), but it saves 
+   a ton of time for configuration, including the fonts.
+ - HELP NEEDED - cannot change keyboard to Russian in X410
+   See https://x410.dev/cookbook/keyboard-layout/
+ - QUESTION: =EMACS FILENAME &= starts with two windows, must disable the tutorial window.
 
- - https://emacsredux.com/blog/2020/09/23/using-emacs-on-windows-with-wsl2/
- - QUESTION: starts with two windows, must disable the tutorial window
- - works now!
- - TODO: must buy from Windows store while discoutn lasts
-
-*** Wanted [0/2]
+* Using orgmode
+** Questions
+*** Wanted [0/5]
 
    Specific:
    - [ ] Move line across headers, beyond own section (Alt - arrow has limits within a header)    
-   - [ ] What does bottom line with =-UUU(DOS)**--F1= mean? What is it called? How to remove it?
    - [ ] Make internal link in document
 
    General:
    - [ ] How does find and replace work?
-   - [ ] Good workflow samples and file samples to learn from 
+   - [ ] Changing windows for different files. 
+   - [ ] Using gmail from emacs?
+   - [ ] Good workflow examples and file samples to learn from.
   
-*** Not critical [0/5]
+*** Someday [0/6]
 
    - [ ] Recalulcate list stats (I double click C-c C-c now to toggle and recalculate)
    - [ ] Add timestamp with current time, not just date 
    - [ ] Change selection color to lightblue (I did, but it did not save)
    - [ ] View calendar
    - [ ] TOC
+   - [ ] git, bash from emacs
  
-*** Not todo
+*** Cancelled [0/2]
 
-   Things that are not a priority, on a cost-benefit basis:
+   - [ ] Fix wrong spacing of Russian fonts in Windows MSI Emacs GUI (X410)
+   - [ ] [[https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer?newreg=a3feb7dd0515464f962f420449b8f1a5][Reload on file change]] will allow editing in VS Code (dangerous conflicts)
 
-   - Editing configuration extensively
-   - Using elisp 
-   - Use spacemacs or emacs-doom 
+** Answers
+*** <TAB> is all you need
 
-   Other reasons:
- 
-   - Fix wrong spacing of Russian fonts in Windows MSI Emacs GUI
-   - [[https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer?newreg=a3feb7dd0515464f962f420449b8f1a5][Reload on file change]] (will allow editing in VS Code)
+ - TAB shows/hides headers (quite powerful!)
+ - Shift-TAB opens all headers 
+*** Make a selection, copy and paste selection 
 
-* Using orgmode
-** <TAB> is all you need
+    You can configure orgmode to use Shift-arrows for selection.
 
-- TAB shows/hides headers (quite powerful!)
-- Shift-TAB opens all headers 
+*** Getting around headers
 
-** Getting around headers
+ - Alt + left rightor  changes header level
+ - Alt + up or down moves lines around
+ - Shift - arrow: 
+   - changes list numbering style
+   - cycles TODO-DONE in header
+   - selects in CUA mode
 
-- Alt + left rightor  changes header level
-- Alt + up or down moves lines around
-- Shift - arrow: 
-  - changes list numbering style
-  - cycles TODO-DONE in header
-  - selects in CUA mode
+*** Create a hyperlink
 
-** Create a hyperlink
+  Use =[[url][]]= syntax or C-c C-l
+  TODO: hyperlinks inside documents.
 
- Use =[[url][]]= syntax or C-c C-l
- TODO: hyperlinks inside documents.
+*** Use timestamps
 
-** Use timestamps
+  SCHEDULED: <2021-08-15 Sun>
 
- SCHEDULED: <2021-08-15 Sun>
+  As [[https://orgmode.org/guide/Creating-Timestamps.html#Creating-Timestamps][guide]] suggests:
 
- As [[https://orgmode.org/guide/Creating-Timestamps.html#Creating-Timestamps][guide]] suggests:
+    - C-c . for timestamp
+    - S-arrow for change
+    - QUESTION: How to put a timestamp with time, not just date?
 
-   - C-c . for timestamp
-   - S-arrow for change
-   - QUESTION: How to put a timestamp with time, not just date?
+*** Checkboxes
 
-** Checkboxes
+    - You must type [0/0] or [0%] for checkbox
+    - Only X counts for completion, not `x` or `+`
+    - C-c C-c toggles and recalculates
+    - QUESTION: what can recalcultae on its own?
+    - Check Rainer König video  [[https://www.youtube.com/watch?v=gvgfmED8RD4&list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE&index=5&t=444s][OrgMode E01S05: Checklists]]
 
-   - You must type [0/0] or [0%] for checkbox
-   - Only X counts for completion, not `x` or `+`
-   - C-c C-c toggles and recalculates
-   - QUESTION: what can recalcultae on its own?
-   - Check Rainer König video  [[https://www.youtube.com/watch?v=gvgfmED8RD4&list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE&index=5&t=444s][OrgMode E01S05: Checklists]]
+    Sample checkbox list [2/3], [66%]:
 
-   Sample checkbox list [2/3], [66%]:
-
-     - [X] Item 1
-     - [X] Item 2
-     - [ ] Item 3
+      - [X] Item 1
+      - [X] Item 2
+      - [ ] Item 3
        
-** Agenda
+*** Agenda
 
-    - Use F10 and menu
-    - C-a key binding must be configured
+     - Use F10 and menu
+     - C-a key binding must be configured
+     - QUESTION: how to close agenda buffer
 
-**** Question :QUESTION:
+*** Clocking..
+    :LOGBOOK:
+    CLOCK: [2021-08-16 Mon 14:29]--[2021-08-16 Mon 14:35] =>  0:06
+    :END:
 
-    - How to close agenda buffer
-** Make a selection, copy and paste selection 
-** Other completed tasks
-   - Sort this list based on completion is C-c ^
-   - Add more cycling todo tags =#+SEQ_TODO:= 
-   - Archive tasks with menu
-   - Defintion list with =::= separator
-   - Github search for org files with =[[https://github.com/search?o=asc&q=language%3Aorg&s=indexed&type=Code][language:org]]=
+    *** Clock this!
+    - Start: C-c C-x C-i
+    - End: C-c C-x C-o
+
+ #+BEGIN_QUOTE
+    It is easy to “clock-in” to a particular task by positioning point within an item 
+    and typing C-c C-x C-i and clocking out with C-c C-x C-o.
+    See the documentation for details.
+ #+END_QUOTE
+
+*** Other completed tasks
+    - Sort this list is C-c ^
+    - Add more cycling todo tags =#+SEQ_TODO:= 
+    - Archive tasks through menu
+    - Defintion list with =::= separator
+    - Github search for org files with =[[https://github.com/search?o=asc&q=language%3Aorg&s=indexed&type=Code][language:org]]=
+
 
 * Reference
 ** Concepts
@@ -169,6 +197,7 @@ The best advice I've heard for using org-mode in some sort of GTD system
 was not to try and set up categories when you start. 
 Start with just a bunch of TODOs, and slowly grow the system as you feel the need to.
 #+END_QUOTE
+
 
 * Links
 
