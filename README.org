@@ -4,24 +4,15 @@
 #+SEQ_TODO: WAITING(w) TODO(t) WIP(p) NEED_HELP(h) SOMEDAY(s) | DONE(d) CANCELLED(f)
 #+ARCHIVE: ARCHIVE.org::
 
-* About this file
-
 In this file I add new things I learn about Emacs and orgmode.
-
-I try to avoid to save time:
-- editing configuration extensively
-- programming in lisp
-- spacemacs or emacs-doom
-- org-roam 
-- email with gnus.
 
 * Starting Emacs
 
 ** Options to run Emacs
 
-- WSL in cmder bash (ubuntu)
-- Windows Emacs MSI (bad russian font spacing)
-- VSCode extension (no agenda view)
+- [x] WSL in cmder terminal, bash console (Ubuntu)
+- [ ] Windows Emacs MSI (bad Russian font spacing)
+- [x] VSCode extension (no agenda view)
 
 ** Basic pipeline
 
@@ -31,6 +22,8 @@ I try to avoid to save time:
  - Edit file using orgmode
  - Save file *C-x C-s*
  - Exit Emacs *C-x C-c*
+
+** Improvments and changes
 
 *** DONE Improvements:
 
@@ -62,42 +55,35 @@ I try to avoid to save time:
   - QUESTION: =EMACS FILENAME &= starts with two windows, 
               how to disable the tutorial window (either .emacs or flag in command line)? 
 
-* List of questions
-
-*** Wanted [0/4]
-
-   - [ ] What useful things do you do with agenda?
-   - [ ] How to close agenda buffer
-   - [ ] Unsure about finding and replacing text
-   - [ ] Unsure about working with windows 
-   - [ ] Add timestamp with current time, not just date 
-  
-*** Someday [0/5]
-
-   - [ ] View calendar (it was popping up accidantally when I hit something wrong)
-   - [ ] Recalulcate list stats (I double click C-c C-c now to toggle and recalculate)
-   - [ ] Move line across headers, beyond own section (Alt - arrow has limits within a header)    
-   - [ ] Use gmail from emacs (gnus)
-   - [ ] git from emacs (magit)
-
-*** Cancelled [0/5]
-   - [ ] Change selection color to lightblue (I did, but it did not save)
-   - [ ] Fix wrong spacing of Russian fonts in Windows MSI Emacs GUI (X410)
-   - [ ] [[https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer?newreg=a3feb7dd0515464f962f420449b8f1a5][Reload on file change]] will allow editing in VS Code (dangerous conflicts)     
-
-
-* Using orgmode
-
-*** <TAB> is all you need
-
- - TAB shows/hides headers (quite powerful!)
- - Shift-TAB opens all headers 
-
-*** Make a selection, copy and paste selection 
+* Using Emacs
+** Make a selection, copy and paste selection 
 
 You can configure orgmode to use Shift-arrows for selection.
 
-*** Getting around headers
+** WIP Finding and replacing text
+
+Unsure how it works on emacs: C-s? What about replace?
+
+** WIP Working with windows 
+
+Unsure how it works on emacs.
+I currently use Remove other windows from File menu.
+
+** WIP Select a vertical block of text
+
+Similar to Alt-Shift in Notepad++.
+
+** Run bash
+
+   M-X shell
+
+* Using orgmode
+** <TAB> is all you need
+
+- TAB shows/hides headers (quite powerful!)
+- Shift-TAB opens all headers 
+
+** Getting around headers
 
  - Alt + left or right changes header level
  - Alt + up or down moves lines around
@@ -106,17 +92,19 @@ You can configure orgmode to use Shift-arrows for selection.
    - cycles TODO-DONE in header
    - selects in CUA mode
 
-*** Create a hyperlink
-  :PROPERTIES:
-  :CUSTOM_ID: hyperlink_target
-  :END:
+**** WIP Move line across headers, beyond own section (Alt - arrow has limits within a header)    
 
-  - Use =[[url][]]= syntax or C-c C-l
-  - Internal [[#hyperlink_target][hyperlink here]]
-  - Or [[file:ARCHIVE.org][link to file]]
-  - [[https://gist.github.com/will-henney/d8564133e07e546789c0][Link example]]
+** Create a hyperlink
+   :PROPERTIES:
+   :CUSTOM_ID: hyperlink_target
+   :END:
 
-*** Use timestamps
+ - Use =[[url][]]= syntax or C-c C-l
+ - Internal [[#hyperlink_target][hyperlink here]]
+ - Or [[file:ARCHIVE.org][link to file]]
+ - [[https://gist.github.com/will-henney/d8564133e07e546789c0][Link example]]
+
+** Use timestamps
 
   SCHEDULED: <2021-08-15 Sun>
 
@@ -126,8 +114,7 @@ You can configure orgmode to use Shift-arrows for selection.
     - S-arrow for change
 
 **** WIP How to put a timestamp with time, not just date? :QUESTION:
-
-*** Checkboxes
+** Checkboxes
 
     - You must type [0/0] or [0%] for checkbox
     - Only X counts for completion, not `x` or `+`
@@ -141,12 +128,16 @@ You can configure orgmode to use Shift-arrows for selection.
       - [X] Item 2
       - [ ] Item 3
        
-*** Agenda
+** Agenda
 
      - Use F10 and menu for agenda view
      - C-a - key binding must be configured
 
-*** WIP Clocking
+**** WIP Unsolved about agenda:
+
+     - [ ] What useful things do you do with agenda?
+     - [ ] How to close agenda buffer
+** WIP Clocking
     :LOGBOOK:
     CLOCK: [2021-08-16 Mon 14:29]--[2021-08-16 Mon 14:35] =>  0:06
     :END:
@@ -163,32 +154,25 @@ You can configure orgmode to use Shift-arrows for selection.
 
     https://www.adventuresinwhy.com/post/org-mode-timekeeping/
 
-*** Table
+** Table
 
  - Start table from menu
  - C-c C-c to format
 
-| Command     | Action                 |
-|-------------+------------------------|
-| M-x shell   | Run Shell              |
-| C-g         | Kill or stop something |
-| C-c C-c     | Toggle or recalculate  |
-| C-k C-y     | Kill and undo line     |
-| C-g         | Exit                   |
-| ESC-ESC-ESC | Exit                   |
-| q           | Exit                   |
+** Calendar
+How to view calendar (it was popping up accidantally when I hit something wrong)
 
-*** Run bash
-
-    M-X shell
-
-*** Some other completed tasks
+** Some other completed tasks
     - Sort this list is C-c ^
     - Add more cycling todo tags =#+SEQ_TODO:= 
     - Archive tasks through menu
     - Defintion list with =::= separator
     - Github search for org files with =[[https://github.com/search?o=asc&q=language%3Aorg&s=indexed&type=Code][language:org]]=
     - C-k C-y can move lines
+
+* WIP Scenarios
+
+What are productive scenarios for using org-mode?
 
 * Reference
 ** Concepts
@@ -200,7 +184,7 @@ You can configure orgmode to use Shift-arrows for selection.
 
 ** Notation
 
-  - * is always a header  
+  - * is a header  
   - drawer box has :NAME: and :END:
   
 ** Quotes
@@ -213,9 +197,7 @@ was not to try and set up categories when you start.
 Start with just a bunch of TODOs, and slowly grow the system as you feel the need to.
 #+END_QUOTE
 
-
 * Links
-
 ** Videos
 
 Essential:
@@ -240,3 +222,28 @@ Academic:
 ** Orgfiles on github
 
  - https://github.com/abcdw/notes/blob/master/notes/20210805075718-the_modern_emacs.org
+
+* Out of scope
+
+I try to avoid more complicated topics:
+
+- packages and complex configuration
+- programming in lisp
+- spacemacs, emacs-doom and similar
+- org-roam
+- org-capture
+- email with gnus
+- git with magit 
+	      
+* Appendix. Key binding cheatsheet
+
+| Command     | Action                 |
+|-------------+------------------------|
+| M-x shell   | Run Shell              |
+| C-g         | Kill or stop something |
+| C-s         | Advanced search        |
+| C-c C-c     | Toggle or recalculate  |
+| C-k C-y     | Kill and undo line     |
+| C-g         | Exit                   |
+| ESC-ESC-ESC | Exit (hopefully)       |
+| q           | Exit (sometimes)       |
