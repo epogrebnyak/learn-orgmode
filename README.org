@@ -106,11 +106,10 @@ You can configure orgmode to use Shift-arrows for selection.
    - cycles TODO-DONE in header
    - selects in CUA mode
 
+*** Create a hyperlink
 :PROPERTIES:
 :CUSTOM_ID: hyperlink_target
 :END:
-
-*** Create a hyperlink
 
   - Use =[[url][]]= syntax or C-c C-l
   - Internal [[#hyperlink_target][hyperlink here]]
