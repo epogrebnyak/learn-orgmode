@@ -1,9 +1,9 @@
 #+AUTHOR:    Евгений Погребняк
 #+TITLE:     Learning Emacs Org-Mode
-#+EMAIL:     e.pogrenyak@gmail.com
-#+SEQ_TODO: WAITING(w) TODO(t) WIP(p) NEED_HELP(h) SOMEDAY(s) | DONE(d) CANCELLED(f)
-#+ARCHIVE: ARCHIVE.org::
-#+OPTIONS: toc:3
+#+EMAIL:     e.pogrebnyak@gmail.com
+#+SEQ_TODO:  WAITING(w) TODO(t) WIP(p) NEED_HELP(h) SOMEDAY(s) | DONE(d) CANCELLED(f)
+#+ARCHIVE:   ARCHIVE.org::
+#+OPTIONS:   toc:3
 
 In this file I add new things I learn about Emacs and orgmode.
 
@@ -41,7 +41,7 @@ like Ctrl-C.
 
 *** DONE Where is the config?
   
-  Use just one, any of them:
+Use just one, any of them:
   - ~/.emacs is a file
   - ~/.emacs.d is a directory with init.el
 
@@ -57,6 +57,7 @@ like Ctrl-C.
               how to disable the tutorial window (either .emacs or flag in command line)? 
 
 * Using Emacs
+
 ** Make a selection, copy and paste selection 
 
 You can configure orgmode to use Shift-arrows for selection.
@@ -67,10 +68,10 @@ Unsure how it works on emacs, is it C-s? What about replace?
 
 ** WIP Working with windows 
 
-Unsure how it works on emacs.
 I currently use <Remove other windows> from File menu.
+Maybe I can do better.
 
-** WIP Select a vertical block of text
+** WIP How to select a vertical block of text?
 
 Similar to Alt-Shift in Notepad++.
 
@@ -115,6 +116,7 @@ Similar to Alt-Shift in Notepad++.
     - S-arrow for change
 
 **** WIP How to put a timestamp with time, not just date? :QUESTION:
+
 ** Checkboxes
 
     - You must type [0/0] or [0%] for checkbox
@@ -175,6 +177,14 @@ How to view calendar (it was popping up accidantally when I hit something wrong)
 
 What are productive scenarios for using org-mode?
 
+-[[https://www.reddit.com/r/emacs/comments/42qr9h/orgmode_for_gtd/d0fupy5?utm_source=share&utm_medium=web2x&context=3][ @Trevoke via reddit]]:
+
+#+BEGIN_QUOTE
+The best advice I've heard for using org-mode in some sort of GTD system 
+was not to try and set up categories when you start. 
+Start with just a bunch of TODOs, and slowly grow the system as you feel the need to.
+#+END_QUOTE
+
 * Reference
 ** Concepts
 
@@ -187,16 +197,6 @@ What are productive scenarios for using org-mode?
 
   - * is a header  
   - drawer box has :NAME: and :END:
-  
-** Quotes
-
--[[https://www.reddit.com/r/emacs/comments/42qr9h/orgmode_for_gtd/d0fupy5?utm_source=share&utm_medium=web2x&context=3][ @Trevoke via reddit]]:
-
-#+BEGIN_QUOTE
-The best advice I've heard for using org-mode in some sort of GTD system 
-was not to try and set up categories when you start. 
-Start with just a bunch of TODOs, and slowly grow the system as you feel the need to.
-#+END_QUOTE
 
 * Links
 ** Videos
