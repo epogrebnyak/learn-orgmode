@@ -16,34 +16,33 @@ I try to avoid to save time:
 - email with gnus.
 
 * Starting Emacs
-** Minimal pipeline
+
+** Options to run Emacs
+
+- WSL in cmder bash (ubuntu)
+- Windows Emacs MSI (bad russian font spacing)
+- VSCode extension (no agenda view)
+
+** Basic pipeline
 
  - Install emacs on WSL with =sudo apt-get install emacs= 
  - Launch emacs with =emacs= command
- - Open a file with F10 menu
+ - Open a file with F10 - File menu
  - Edit file using orgmode
  - Save file *C-x C-s*
  - Exit Emacs *C-x C-c*
 
-:INSTALL: 
-  
- - Running in cmder bash (ubuntu)
- - Windows Emacs MSI (bad russian font spacing)
- - VSCode extension (no agenda view)
-
-:END:
-
-** Improvements
+*** DONE Improvements:
 
   - F10 may need Fnlock to work on Lenovo - use Fn-Esc.
-  - Configure terminal to resolve [[https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict][key binding conflicts]] like Ctrl-C.
-  - Launch emacs with filename =emacs -nw README.org=
-  - =pandoc README.org -f org -t gfm -o README.md= (see pandoc [[https://pandoc.org/MANUAL.html#general-options][formats list]])
-
+  - Must configure terminal to resolve [[https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict][key binding conflicts]] like Ctrl-C.
+  - Launch emacs with filename =emacs -nw README.org= (-nw is for command-line mode)
+ 
 *** DONE Set =org-support-shift-select= and CUA option
-  - Selecting with Shift is already built-in part of Emacs, but not org-mode
+  - Selection with Shift is already built-in part of Emacs, but not org-mode
   - Start with 'M-x customize' to find options about Shift selection
   - Set CUA (Ctrl-Z/X/C/V) as part of F10 menu
+  - Save options
   - See also =org-disputed-keys= in [[https://orgmode.org/manual/Conflicts.html][Orgmode conflicts]].
 
 *** DONE Where is the config?
@@ -59,33 +58,33 @@ I try to avoid to save time:
   - One must buy X410 from Windows store (USD10 with discount), 
     but it saves a ton of time for configuration, including the fonts.
   - HELP NEEDED: cannot change [[https://x410.dev/cookbook/keyboard-layout/][keyboard layout]] 
-    to Russian in X410 - maybe need xfce.
-  - QUESTION: =EMACS FILENAME &= starts with two windows, must disable the tutorial window.
+                to Russian in X410 - maybe need xfce.
+  - QUESTION: =EMACS FILENAME &= starts with two windows, 
+              how to disable the tutorial window (either .emacs or flag in command line)? 
 
 * List of questions
 
 *** Wanted [0/4]
 
-   - [ ] Make internal hyperlink in document
-   - [ ] Close agenda buffer
-   - [ ] Find and replace text
-   - [ ] Change window. 
+   - [ ] What useful things do you do with agenda?
+   - [ ] How to close agenda buffer
+   - [ ] Unsure about finding and replacing text
+   - [ ] Unsure about working with windows 
+   - [ ] Add timestamp with current time, not just date 
   
 *** Someday [0/5]
 
-   - [ ] Add timestamp with current time, not just date 
-   - [ ] Change selection color to lightblue (I did, but it did not save)
-   - [ ] View calendar
-   - [ ] Add TOC
-   - [ ] git from emacs (magit)
- 
-*** Cancelled [0/5]
-
+   - [ ] View calendar (it was popping up accidantally when I hit something wrong)
    - [ ] Recalulcate list stats (I double click C-c C-c now to toggle and recalculate)
-   - [ ] Fix wrong spacing of Russian fonts in Windows MSI Emacs GUI (X410)
-   - [ ] [[https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer?newreg=a3feb7dd0515464f962f420449b8f1a5][Reload on file change]] will allow editing in VS Code (dangerous conflicts)     
    - [ ] Move line across headers, beyond own section (Alt - arrow has limits within a header)    
    - [ ] Use gmail from emacs (gnus)
+   - [ ] git from emacs (magit)
+
+*** Cancelled [0/5]
+   - [ ] Change selection color to lightblue (I did, but it did not save)
+   - [ ] Fix wrong spacing of Russian fonts in Windows MSI Emacs GUI (X410)
+   - [ ] [[https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer?newreg=a3feb7dd0515464f962f420449b8f1a5][Reload on file change]] will allow editing in VS Code (dangerous conflicts)     
+
 
 * Using orgmode
 
@@ -100,17 +99,19 @@ You can configure orgmode to use Shift-arrows for selection.
 
 *** Getting around headers
 
- - Alt + left rightor  changes header level
+ - Alt + left or right changes header level
  - Alt + up or down moves lines around
  - Shift - arrow: 
    - changes list numbering style
    - cycles TODO-DONE in header
    - selects in CUA mode
 
+:CUSTOM_ID: hyperlink1
+
 *** Create a hyperlink
 
-  Use =[[url][]]= syntax or C-c C-l
-  TODO: hyperlinks inside documents.
+  - Use =[[url][]]= syntax or C-c C-l
+  - Internal [[hyperlink][#hyperlink1]]
 
 *** Use timestamps
 
@@ -127,8 +128,8 @@ You can configure orgmode to use Shift-arrows for selection.
     - You must type [0/0] or [0%] for checkbox
     - Only X counts for completion, not `x` or `+`
     - C-c C-c toggles and recalculates
-    - QUESTION: what can recalcultae on its own?
-    - Check Rainer König video  [[https://www.youtube.com/watch?v=gvgfmED8RD4&list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE&index=5&t=444s][OrgMode E01S05: Checklists]]
+    - QUESTION: what can recalculate on its own?
+    - Check Rainer König video [[https://www.youtube.com/watch?v=gvgfmED8RD4&list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE&index=5&t=444s][OrgMode E01S05: Checklists]]
 
     Sample checkbox list [2/3], [66%]:
 
