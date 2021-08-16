@@ -112,6 +112,7 @@ You can configure orgmode to use Shift-arrows for selection.
 
   - Use =[[url][]]= syntax or C-c C-l
   - Internal [[#hyperlink1][hyperlink here]]
+  - Or [[file:ARCHIVE.org][link to file]]
 
 *** Use timestamps
 
