@@ -3,6 +3,7 @@
 #+EMAIL:     e.pogrenyak@gmail.com
 #+SEQ_TODO: WAITING(w) TODO(t) WIP(p) NEED_HELP(h) SOMEDAY(s) | DONE(d) CANCELLED(f)
 #+ARCHIVE: ARCHIVE.org::
+#+OPTIONS: toc:3
 
 In this file I add new things I learn about Emacs and orgmode.
 
@@ -17,19 +18,19 @@ In this file I add new things I learn about Emacs and orgmode.
 ** Basic pipeline
 
  - Install emacs on WSL with =sudo apt-get install emacs= 
- - Launch emacs with =emacs= command
+ - Launch emacs with =emacs -nw <FILENAME.org>= command
  - Open a file with F10 - File menu
- - Edit file using orgmode
+ - Edit file
  - Save file *C-x C-s*
  - Exit Emacs *C-x C-c*
 
-** Improvments and changes
+** Improvements and changes
 
-*** DONE Improvements:
+*** DONE Configure terminal to avoid key conflicts:
 
-  - F10 may need Fnlock to work on Lenovo - use Fn-Esc.
-  - Must configure terminal to resolve [[https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict][key binding conflicts]] like Ctrl-C.
-  - Launch emacs with filename =emacs -nw README.org= (-nw is for command-line mode)
+Must configure terminal to resolve 
+[[https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict][key binding conflicts]] 
+like Ctrl-C.
  
 *** DONE Set =org-support-shift-select= and CUA option
   - Selection with Shift is already built-in part of Emacs, but not org-mode
@@ -62,12 +63,12 @@ You can configure orgmode to use Shift-arrows for selection.
 
 ** WIP Finding and replacing text
 
-Unsure how it works on emacs: C-s? What about replace?
+Unsure how it works on emacs, is it C-s? What about replace?
 
 ** WIP Working with windows 
 
 Unsure how it works on emacs.
-I currently use Remove other windows from File menu.
+I currently use <Remove other windows> from File menu.
 
 ** WIP Select a vertical block of text
 
@@ -247,3 +248,4 @@ I try to avoid more complicated topics:
 | C-g         | Exit                   |
 | ESC-ESC-ESC | Exit (hopefully)       |
 | q           | Exit (sometimes)       |
+| Fn-Esc      | Lock Fn key (Lenovo)   |         
