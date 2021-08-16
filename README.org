@@ -1,4 +1,4 @@
-#+AUTHOR:    Евгений Погребняк
+#+AUTHOR:    Name here
 #+TITLE:     Learning Emacs Org-Mode
 #+EMAIL:     e.pogrenyak@gmail.com
 #+SEQ_TODO: WAITING(w) TODO(t) WIP(p) NEED_HELP(h) SOMEDAY(s) | DONE(d) CANCELLED(f)
@@ -50,18 +50,16 @@ My intents:
   - Set CUA (Ctrl-Z/X/C/V) as part of F10 menu
   - See also =org-disputed-keys= in [[https://orgmode.org/manual/Conflicts.html][Orgmode conflicts]].
 
-*** NEED_HELP Screen bottomline 
-    
+*** WIP Modeline     
     - What does bottom line with =-UUU(DOS)**--F1= mean? 
     - What is it called? 
     - How to remove it?
 
-*** NEED_HELP Where is the config?
-
-    - ~/.emacs is a file 
-    - ~/.emacs.d is a directory
-    - QUESTION: what is the difference? 
-
+*** WIP Where is the config?
+    - ~/.emacs is a file
+    - ~/.emacs.d is a directory (init.el)
+    - use just one
+ 
 *** WIP Using X410 video system                                       
 
  - [[https://emacsredux.com/blog/2020/09/23/using-emacs-on-windows-with-wsl2/][Original article with X410 recommendation]] 
@@ -73,17 +71,25 @@ My intents:
  - QUESTION: =EMACS FILENAME &= starts with two windows, must disable the tutorial window.
 
 * Using orgmode
+
 ** Questions
+
 *** Wanted [0/5]
 
    Specific:
+
    - [ ] Move line across headers, beyond own section (Alt - arrow has limits within a header)    
+         C-k C-y
    - [ ] Make internal link in document
+         ESC-ESC-ESC
+         C-g
+         q
 
    General:
+
    - [ ] How does find and replace work?
+   - [ ] Using gmail from emacs? (gnus)
    - [ ] Changing windows for different files. 
-   - [ ] Using gmail from emacs?
    - [ ] Good workflow examples and file samples to learn from.
   
 *** Someday [0/6]
@@ -93,21 +99,38 @@ My intents:
    - [ ] Change selection color to lightblue (I did, but it did not save)
    - [ ] View calendar
    - [ ] TOC
-   - [ ] git, bash from emacs
+   - [ ] git bash from emacs (magit)
  
 *** Cancelled [0/2]
 
    - [ ] Fix wrong spacing of Russian fonts in Windows MSI Emacs GUI (X410)
-   - [ ] [[https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer?newreg=a3feb7dd0515464f962f420449b8f1a5][Reload on file change]] will allow editing in VS Code (dangerous conflicts)
+   - [ ] [[https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer?newreg=a3feb7dd0515464f962f420449b8f1a5][Reload on file change]] will allow editing in VS Code (dangerous conflicts)     
 
 ** Answers
+
+*** Table
+
+ - Start from menu
+ - 
+
+| Command   | Action                 |
+|-----------+------------------------|
+| M-x shell | Run Shell              |
+| C-g       | Kill or stop something |
+| C-c C-c   | Toggle or recalculate  |
+
 *** <TAB> is all you need
 
  - TAB shows/hides headers (quite powerful!)
  - Shift-TAB opens all headers 
+
 *** Make a selection, copy and paste selection 
 
-    You can configure orgmode to use Shift-arrows for selection.
+You can configure orgmode to use Shift-arrows for selection.
+
+*** Run bash
+
+    M-X shell
 
 *** Getting around headers
 
