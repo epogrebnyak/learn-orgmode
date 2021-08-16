@@ -107,9 +107,9 @@ You can configure orgmode to use Shift-arrows for selection.
    - selects in CUA mode
 
 *** Create a hyperlink
-:PROPERTIES:
-:CUSTOM_ID: hyperlink_target
-:END:
+  :PROPERTIES:
+  :CUSTOM_ID: hyperlink_target
+  :END:
 
   - Use =[[url][]]= syntax or C-c C-l
   - Internal [[#hyperlink_target][hyperlink here]]
