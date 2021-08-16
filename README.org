@@ -141,12 +141,12 @@
 
     - How to close agenda buffer
 ** Make a selection, copy and paste selection 
-** Other tasks
+** Other completed tasks
    - Sort this list based on completion is C-c ^
    - Add more cycling todo tags =#+SEQ_TODO:= 
    - Archive tasks with menu
    - Defintion list with =::= separator
-   -  
+   - Github search for org files with =[[https://github.com/search?o=asc&q=language%3Aorg&s=indexed&type=Code][language:org]]=
 
 * Reference
 ** Concepts
