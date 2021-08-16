@@ -1,4 +1,4 @@
-#+AUTHOR:    Name here
+#+AUTHOR:    Евгений Погребняк
 #+TITLE:     Learning Emacs Org-Mode
 #+EMAIL:     e.pogrenyak@gmail.com
 #+SEQ_TODO: WAITING(w) TODO(t) WIP(p) NEED_HELP(h) SOMEDAY(s) | DONE(d) CANCELLED(f)
@@ -6,16 +6,14 @@
 
 * About this file
 
-What is here:
+In this file I add new things I learn about Emacs and orgmode.
 
-- I add new things I learn about Emacs and orgmode in this document.
-- I formulate questions about actions where I stumbled, marked =WIP=, =HELP_NEEDED=, =QUESTION= and similar.
-
-My intents:
-
-- My current goal is better control of todo's with minimal learning of emacs orgmode.
-- Editing configuration extensively, programming in elisp, using spacemacs or emacs-doom,
-  using org-roam are not priorities for me now.
+I try to avoid:
+- editing configuration extensively
+- programming in lisp
+- spacemacs or emacs-doom
+- org-roam 
+- email with gnus
 
 
 * Starting Emacs
@@ -37,38 +35,32 @@ My intents:
 :END:
 
 ** Improvements
-
   - F10 may need Fnlock to work on Lenovo - use Fn-Esc.
   - Configure terminal to resolve [[https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict][key binding conflicts]] like Ctrl-C.
   - Launch emacs with filename =emacs -nw README.org=
   - =pandoc README.org -f org -t gfm -o README.md= (see pandoc [[https://pandoc.org/MANUAL.html#general-options][formats list]])
 
 *** DONE Set =org-support-shift-select= and CUA option
-
   - Selecting with Shift is already built-in part of Emacs, but not org-mode
   - Start with 'M-x customize' to find options about Shift selection
   - Set CUA (Ctrl-Z/X/C/V) as part of F10 menu
   - See also =org-disputed-keys= in [[https://orgmode.org/manual/Conflicts.html][Orgmode conflicts]].
 
-*** WIP Modeline     
-    - What does bottom line with =-UUU(DOS)**--F1= mean? 
-    - What is it called? 
-    - How to remove it?
-
-*** WIP Where is the config?
-    - ~/.emacs is a file
-    - ~/.emacs.d is a directory (init.el)
-    - use just one
+*** DONE Where is the config?
+  - ~/.emacs is a file
+  - ~/.emacs.d is a directory with init.el
+  - use just one of them
  
 *** WIP Using X410 video system                                       
 
- - [[https://emacsredux.com/blog/2020/09/23/using-emacs-on-windows-with-wsl2/][Original article with X410 recommendation]] 
- - On WSL 1 works at [[https://x410.dev/cookbook/wsl/using-x410-with-wsl2/][127.0.0.1]]
- - One must buy X410 from Windows store (USD10 with discount), but it saves 
-   a ton of time for configuration, including the fonts.
- - HELP NEEDED - cannot change keyboard to Russian in X410 - maybe need xfce.
-   See https://x410.dev/cookbook/keyboard-layout/
- - QUESTION: =EMACS FILENAME &= starts with two windows, must disable the tutorial window.
+  - [[https://emacsredux.com/blog/2020/09/23/using-emacs-on-windows-with-wsl2/][Original article with X410 recommendation]] 
+  - On WSL 1 works at [[https://x410.dev/cookbook/wsl/using-x410-with-wsl2/][127.0.0.1]]
+  - One must buy X410 from Windows store (USD10 with discount), 
+    but it saves a ton of time for configuration, including the fonts.
+  - HELP NEEDED: cannot change keyboard to Russian in X410 - maybe need xfce.
+    See https://x410.dev/cookbook/keyboard-layout/
+  - QUESTION: =EMACS FILENAME &= starts with two windows, must disable the tutorial window.
+    
 
 * Using orgmode
 
@@ -78,19 +70,11 @@ My intents:
 
    Specific:
 
-   - [ ] Move line across headers, beyond own section (Alt - arrow has limits within a header)    
-         C-k C-y
    - [ ] Make internal link in document
-         ESC-ESC-ESC
-         C-g
-         q
-
-   General:
-
-   - [ ] How does find and replace work?
+   - [ ] How to close agenda buffer?
+   - [ ] How does find and replace?
    - [ ] Using gmail from emacs? (gnus)
    - [ ] Changing windows for different files. 
-   - [ ] Good workflow examples and file samples to learn from.
   
 *** Someday [0/6]
 
@@ -105,19 +89,10 @@ My intents:
 
    - [ ] Fix wrong spacing of Russian fonts in Windows MSI Emacs GUI (X410)
    - [ ] [[https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer?newreg=a3feb7dd0515464f962f420449b8f1a5][Reload on file change]] will allow editing in VS Code (dangerous conflicts)     
+   - [ ] Move line across headers, beyond own section (Alt - arrow has limits within a header)    
+
 
 ** Answers
-
-*** Table
-
- - Start from menu
- - 
-
-| Command   | Action                 |
-|-----------+------------------------|
-| M-x shell | Run Shell              |
-| C-g       | Kill or stop something |
-| C-c C-c   | Toggle or recalculate  |
 
 *** <TAB> is all you need
 
@@ -127,10 +102,6 @@ My intents:
 *** Make a selection, copy and paste selection 
 
 You can configure orgmode to use Shift-arrows for selection.
-
-*** Run bash
-
-    M-X shell
 
 *** Getting around headers
 
@@ -174,7 +145,6 @@ You can configure orgmode to use Shift-arrows for selection.
 
      - Use F10 and menu
      - C-a key binding must be configured
-     - QUESTION: how to close agenda buffer
 
 *** WIP Clocking
     :LOGBOOK:
@@ -193,26 +163,47 @@ You can configure orgmode to use Shift-arrows for selection.
 
     https://www.adventuresinwhy.com/post/org-mode-timekeeping/
 
-*** Other completed tasks
+*** Table
+
+ - Start table from menu
+ - C-c C-c to format
+
+| Command     | Action                 |
+|-------------+------------------------|
+| M-x shell   | Run Shell              |
+| C-g         | Kill or stop something |
+| C-c C-c     | Toggle or recalculate  |
+| C-k C-y     | Kill and undo line     |
+| C-g         | Exit                   |
+| ESC-ESC-ESC | Exit                   |
+| q           | Exit                   |
+
+*** Run bash
+
+    M-X shell
+
+*** Some other completed tasks
     - Sort this list is C-c ^
     - Add more cycling todo tags =#+SEQ_TODO:= 
     - Archive tasks through menu
     - Defintion list with =::= separator
     - Github search for org files with =[[https://github.com/search?o=asc&q=language%3Aorg&s=indexed&type=Code][language:org]]=
+    - C-k C-y can move lines
 
 
 * Reference
 ** Concepts
 
  - buffer :: a screen that represents a file or Emacs own output
- - frame :: ...
- - window :: ...
+ - frame :: is a new window for the whole program
+ - modeline :: a line at the bottom of a screen with something like =-UUU(DOS)**--F1=
+ - window :: is a windows inside editor
 
 ** Notation
 
   - * is always a header  
-  - drawer box has :NAME: and :END:     
-
+  - drawer box has :NAME: and :END:
+  
 ** Quotes
 
 -[[https://www.reddit.com/r/emacs/comments/42qr9h/orgmode_for_gtd/d0fupy5?utm_source=share&utm_medium=web2x&context=3][ @Trevoke via reddit]]:
