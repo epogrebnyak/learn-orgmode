@@ -111,7 +111,7 @@ You can configure orgmode to use Shift-arrows for selection.
 *** Create a hyperlink
 
   - Use =[[url][]]= syntax or C-c C-l
-  - Internal [[hyperlink][#hyperlink1]]
+  - Internal [[#hyperlink1][hyperlink here]]
 
 *** Use timestamps
 
