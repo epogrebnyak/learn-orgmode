@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-08-17 Tue 00:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Learning Emacs Org-Mode</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Евгений Погребняк" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Learning Emacs Org-Mode</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd57aefb">1. Starting Emacs</a>
+<ul>
+<li><a href="#org232672d">1.1. Options to run Emacs</a></li>
+<li><a href="#org69349c6">1.2. Basic pipeline</a></li>
+<li><a href="#org01fecde">1.3. Improvements and changes</a>
+<ul>
+<li><a href="#org074c0ee">1.3.1. <span class="done DONE">DONE</span> Configure terminal to avoid key conflicts:</a></li>
+<li><a href="#org99e7a1d">1.3.2. <span class="done DONE">DONE</span> Set <code>org-support-shift-select</code> and CUA option</a></li>
+<li><a href="#org913e4d2">1.3.3. <span class="done DONE">DONE</span> Where is the config?</a></li>
+<li><a href="#orgc65ac44">1.3.4. <span class="todo WIP">WIP</span> Using X410 video system</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org751d3eb">2. Using Emacs</a>
+<ul>
+<li><a href="#orgfdf94ad">2.1. Make a selection, copy and paste selection</a></li>
+<li><a href="#org0e9ab79">2.2. <span class="todo WIP">WIP</span> Finding and replacing text</a></li>
+<li><a href="#orgce2e249">2.3. <span class="todo WIP">WIP</span> Working with windows</a></li>
+<li><a href="#orgfb4b381">2.4. <span class="todo WIP">WIP</span> How to select a vertical block of text?</a></li>
+<li><a href="#org85139d4">2.5. Run bash</a></li>
+</ul>
+</li>
+<li><a href="#org6f3addc">3. Using orgmode</a>
+<ul>
+<li><a href="#org2c7cf55">3.1. &lt;TAB&gt; is all you need</a></li>
+<li><a href="#orgd0de37d">3.2. Getting around headers</a></li>
+<li><a href="#hyperlink_target">3.3. Create a hyperlink</a></li>
+<li><a href="#org3336226">3.4. Use timestamps</a></li>
+<li><a href="#org94bf27a">3.5. Checkboxes</a></li>
+<li><a href="#org1ee2b3a">3.6. Agenda</a></li>
+<li><a href="#orgf059c24">3.7. <span class="todo WIP">WIP</span> Clocking</a></li>
+<li><a href="#org5ba45d7">3.8. Table</a></li>
+<li><a href="#org23d1775">3.9. Calendar</a></li>
+<li><a href="#orgc64afaa">3.10. Some other completed tasks</a></li>
+</ul>
+</li>
+<li><a href="#org9fe6c26">4. <span class="todo WIP">WIP</span> Scenarios</a></li>
+<li><a href="#org99861a0">5. Reference</a>
+<ul>
+<li><a href="#orga003945">5.1. Concepts</a></li>
+<li><a href="#orgec7386f">5.2. Notation</a></li>
+</ul>
+</li>
+<li><a href="#org33f4591">6. Links</a>
+<ul>
+<li><a href="#org0350601">6.1. Videos</a></li>
+<li><a href="#org0275990">6.2. Blogs and success stories</a></li>
+<li><a href="#org1b431e0">6.3. Orgfiles on github</a></li>
+</ul>
+</li>
+<li><a href="#org6a18a30">7. Out of scope</a></li>
+<li><a href="#org15263a0">8. Appendix. Key binding cheatsheet</a></li>
+</ul>
+</div>
+</div>
+<p>
+In this file I add new things I learn about Emacs and orgmode.
+</p>
+
+
+
+<div id="outline-container-orgd57aefb" class="outline-2">
+<h2 id="orgd57aefb"><span class="section-number-2">1</span> Starting Emacs</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org232672d" class="outline-3">
+<h3 id="org232672d"><span class="section-number-3">1.1</span> Options to run Emacs</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>WSL in cmder terminal, bash console (Ubuntu)</li>
+<li class="off"><code>[&#xa0;]</code> Windows Emacs MSI (bad Russian font spacing)</li>
+<li>VSCode extension (no agenda view)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org69349c6" class="outline-3">
+<h3 id="org69349c6"><span class="section-number-3">1.2</span> Basic pipeline</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Install emacs on WSL with <code>sudo apt-get install emacs</code></li>
+<li>Launch emacs with <code>emacs -nw &lt;FILENAME.org&gt;</code> command</li>
+<li>Open a file with F10 - File menu</li>
+<li>Edit file</li>
+<li>Save file <b>C-x C-s</b></li>
+<li>Exit Emacs <b>C-x C-c</b></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org01fecde" class="outline-3">
+<h3 id="org01fecde"><span class="section-number-3">1.3</span> Improvements and changes</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org074c0ee" class="outline-4">
+<h4 id="org074c0ee"><span class="section-number-4">1.3.1</span> <span class="done DONE">DONE</span> Configure terminal to avoid key conflicts:</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+Must configure terminal to resolve 
+<a href="https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict">key binding conflicts</a> 
+like Ctrl-C.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org99e7a1d" class="outline-4">
+<h4 id="org99e7a1d"><span class="section-number-4">1.3.2</span> <span class="done DONE">DONE</span> Set <code>org-support-shift-select</code> and CUA option</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li>Selection with Shift is already built-in part of Emacs, but not org-mode</li>
+<li>Start with 'M-x customize' to find options about Shift selection</li>
+<li>Set CUA (Ctrl-Z/X/C/V) as part of F10 menu</li>
+<li>Save options</li>
+<li>See also <code>org-disputed-keys</code> in <a href="https://orgmode.org/manual/Conflicts.html">Orgmode conflicts</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org913e4d2" class="outline-4">
+<h4 id="org913e4d2"><span class="section-number-4">1.3.3</span> <span class="done DONE">DONE</span> Where is the config?</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+Use just one, any of them:
+</p>
+<ul class="org-ul">
+<li>~/.emacs is a file</li>
+<li>~/.emacs.d is a directory with init.el</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc65ac44" class="outline-4">
+<h4 id="orgc65ac44"><span class="section-number-4">1.3.4</span> <span class="todo WIP">WIP</span> Using X410 video system</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<ul class="org-ul">
+<li><a href="https://emacsredux.com/blog/2020/09/23/using-emacs-on-windows-with-wsl2/">Original article with X410 recommendation</a></li>
+<li>On WSL 1 works at <a href="https://x410.dev/cookbook/wsl/using-x410-with-wsl2/">127.0.0.1</a></li>
+<li>One must buy X410 from Windows store (USD10 with discount), 
+but it saves a ton of time for configuration, including the fonts.</li>
+<li>HELP NEEDED: cannot change <a href="https://x410.dev/cookbook/keyboard-layout/">keyboard layout</a> 
+to Russian in X410 - maybe need xfce.</li>
+<li>QUESTION: <code>EMACS FILENAME &amp;</code> starts with two windows, 
+how to disable the tutorial window (either .emacs or flag in command line)?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org751d3eb" class="outline-2">
+<h2 id="org751d3eb"><span class="section-number-2">2</span> Using Emacs</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgfdf94ad" class="outline-3">
+<h3 id="orgfdf94ad"><span class="section-number-3">2.1</span> Make a selection, copy and paste selection</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+You can configure orgmode to use Shift-arrows for selection.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0e9ab79" class="outline-3">
+<h3 id="org0e9ab79"><span class="section-number-3">2.2</span> <span class="todo WIP">WIP</span> Finding and replacing text</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Unsure how it works on emacs, is it C-s? What about replace?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgce2e249" class="outline-3">
+<h3 id="orgce2e249"><span class="section-number-3">2.3</span> <span class="todo WIP">WIP</span> Working with windows</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+I currently use &lt;Remove other windows&gt; from File menu.
+Maybe I can do better.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfb4b381" class="outline-3">
+<h3 id="orgfb4b381"><span class="section-number-3">2.4</span> <span class="todo WIP">WIP</span> How to select a vertical block of text?</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Similar to Alt-Shift in Notepad++.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org85139d4" class="outline-3">
+<h3 id="org85139d4"><span class="section-number-3">2.5</span> Run bash</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+M-X shell
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6f3addc" class="outline-2">
+<h2 id="org6f3addc"><span class="section-number-2">3</span> Using orgmode</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org2c7cf55" class="outline-3">
+<h3 id="org2c7cf55"><span class="section-number-3">3.1</span> &lt;TAB&gt; is all you need</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>TAB shows/hides headers (quite powerful!)</li>
+<li>Shift-TAB opens all headers</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd0de37d" class="outline-3">
+<h3 id="orgd0de37d"><span class="section-number-3">3.2</span> Getting around headers</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Alt + left or right changes header level</li>
+<li>Alt + up or down moves lines around</li>
+<li>Shift - arrow: 
+<ul class="org-ul">
+<li>changes list numbering style</li>
+<li>cycles TODO-DONE in header</li>
+<li>selects in CUA mode</li>
+</ul></li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgbd03140"></a><span class="todo WIP">WIP</span> Move line across headers, beyond own section (Alt - arrow has limits within a header)<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org0d90e2e" class="outline-3">
+<h3 id="hyperlink_target"><a id="org0d90e2e"></a><span class="section-number-3">3.3</span> Create a hyperlink</h3>
+<div class="outline-text-3" id="text-hyperlink_target">
+<ul class="org-ul">
+<li>Use <code>[[url][]]</code> syntax or C-c C-l</li>
+<li>Internal <a href="#hyperlink_target">hyperlink here</a></li>
+<li>Or <a href="ARCHIVE.html">link to file</a></li>
+<li><a href="https://gist.github.com/will-henney/d8564133e07e546789c0">Link example</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3336226" class="outline-3">
+<h3 id="org3336226"><span class="section-number-3">3.4</span> Use timestamps</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-08-15 Sun&gt;</span></span>
+</p>
+
+<p>
+As <a href="https://orgmode.org/guide/Creating-Timestamps.html#Creating-Timestamps">guide</a> suggests:
+</p>
+
+<ul class="org-ul">
+<li>C-c . for timestamp</li>
+<li>S-arrow for change</li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="org72e7410"></a><span class="todo WIP">WIP</span> How to put a timestamp with time, not just date?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="QUESTION">QUESTION</span></span><br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org94bf27a" class="outline-3">
+<h3 id="org94bf27a"><span class="section-number-3">3.5</span> Checkboxes</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>You must type <code>[0/0]</code> or <code>[0%]</code> for checkbox</li>
+<li>Only X counts for completion, not `x` or `+`</li>
+<li>C-c C-c toggles and recalculates</li>
+<li>QUESTION: what can recalculate on its own?</li>
+<li>Check Rainer König video <a href="https://www.youtube.com/watch?v=gvgfmED8RD4&amp;list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE&amp;index=5&amp;t=444s">OrgMode E01S05: Checklists</a></li>
+</ul>
+
+<p>
+Sample checkbox list <code>[2/3]</code>, <code>[66%]</code>:
+</p>
+
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Item 1</li>
+<li class="on"><code>[X]</code> Item 2</li>
+<li class="off"><code>[&#xa0;]</code> Item 3</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1ee2b3a" class="outline-3">
+<h3 id="org1ee2b3a"><span class="section-number-3">3.6</span> Agenda</h3>
+<div class="outline-text-3" id="text-3-6">
+<ul class="org-ul">
+<li>Use F10 and menu for agenda view</li>
+<li>C-a - key binding must be configured</li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="org61dff24"></a><span class="todo WIP">WIP</span> Unsolved about agenda:<br />
+<div class="outline-text-5" id="text-3-6-0-1">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> What useful things do you do with agenda?</li>
+<li class="off"><code>[&#xa0;]</code> How to close agenda buffer</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgf059c24" class="outline-3">
+<h3 id="orgf059c24"><span class="section-number-3">3.7</span> <span class="todo WIP">WIP</span> Clocking</h3>
+<div class="outline-text-3" id="text-3-7">
+<p>
+<b>*</b> Clock this!
+</p>
+<ul class="org-ul">
+<li>Start: C-c C-x C-i</li>
+<li>End: C-c C-x C-o</li>
+</ul>
+
+<blockquote>
+<p>
+It is easy to “clock-in” to a particular task by positioning point within an item 
+and typing C-c C-x C-i and clocking out with C-c C-x C-o.
+See the documentation for details.
+</p>
+</blockquote>
+
+<p>
+<a href="https://www.adventuresinwhy.com/post/org-mode-timekeeping/">https://www.adventuresinwhy.com/post/org-mode-timekeeping/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5ba45d7" class="outline-3">
+<h3 id="org5ba45d7"><span class="section-number-3">3.8</span> Table</h3>
+<div class="outline-text-3" id="text-3-8">
+<ul class="org-ul">
+<li>Start table from menu</li>
+<li>C-c C-c to format</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org23d1775" class="outline-3">
+<h3 id="org23d1775"><span class="section-number-3">3.9</span> Calendar</h3>
+<div class="outline-text-3" id="text-3-9">
+<p>
+How to view calendar (it was popping up accidantally when I hit something wrong)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc64afaa" class="outline-3">
+<h3 id="orgc64afaa"><span class="section-number-3">3.10</span> Some other completed tasks</h3>
+<div class="outline-text-3" id="text-3-10">
+<ul class="org-ul">
+<li>Sort this list is C-c ^</li>
+<li>Add more cycling todo tags <code>#+SEQ_TODO:</code></li>
+<li>Archive tasks through menu</li>
+<li>Defintion list with <code>::</code> separator</li>
+<li>Github search for org files with <code>[[https://github.com/search?o=asc&amp;q=language%3Aorg&amp;s=indexed&amp;type=Code][language:org]]</code></li>
+<li>C-k C-y can move lines</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9fe6c26" class="outline-2">
+<h2 id="org9fe6c26"><span class="section-number-2">4</span> <span class="todo WIP">WIP</span> Scenarios</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+What are productive scenarios for using org-mode?
+</p>
+
+<p>
+-<a href="https://www.reddit.com/r/emacs/comments/42qr9h/orgmode_for_gtd/d0fupy5?utm_source=share&amp;utm_medium=web2x&amp;context=3"> @Trevoke via reddit</a>:
+</p>
+
+<blockquote>
+<p>
+The best advice I've heard for using org-mode in some sort of GTD system 
+was not to try and set up categories when you start. 
+Start with just a bunch of TODOs, and slowly grow the system as you feel the need to.
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org99861a0" class="outline-2">
+<h2 id="org99861a0"><span class="section-number-2">5</span> Reference</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orga003945" class="outline-3">
+<h3 id="orga003945"><span class="section-number-3">5.1</span> Concepts</h3>
+<div class="outline-text-3" id="text-5-1">
+<dl class="org-dl">
+<dt>buffer</dt><dd>a screen that represents a file or Emacs own output</dd>
+<dt>frame</dt><dd>is a new window for the whole program</dd>
+<dt>modeline</dt><dd>a line at the bottom of a screen with something like <code>-UUU(DOS)**--F1</code></dd>
+<dt>window</dt><dd>is a windows inside editor</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgec7386f" class="outline-3">
+<h3 id="orgec7386f"><span class="section-number-3">5.2</span> Notation</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>* is a header</li>
+<li>drawer box has :NAME: and :END:</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org33f4591" class="outline-2">
+<h2 id="org33f4591"><span class="section-number-2">6</span> Links</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org0350601" class="outline-3">
+<h3 id="org0350601"><span class="section-number-3">6.1</span> Videos</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Essential:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=oJTwQvgfgMM">Carsten Dominik keynote (2008)</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE">Rainer König lesson series</a></li>
+</ul>
+
+<p>
+Extension:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=JWD1Fpdd4Pc">Evil Mode: Or, How I Learned to Stop Worrying and Love Emacs</a></li>
+<li><a href="https://www.youtube.com/watch?v=ZbxUJz6a9Io">Andrew Tropin - Modern Emacs (2021)</a></li>
+</ul>
+
+<p>
+Academic:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://arxiv.org/abs/2008.06030">On the design of text editors</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0275990" class="outline-3">
+<h3 id="org0275990"><span class="section-number-3">6.2</span> Blogs and success stories</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li><a href="https://sachachua.com/blog/2014/01/tips-learning-org-mode-emacs/">https://sachachua.com/blog/2014/01/tips-learning-org-mode-emacs/</a></li>
+<li><a href="https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html">https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1b431e0" class="outline-3">
+<h3 id="org1b431e0"><span class="section-number-3">6.3</span> Orgfiles on github</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li><a href="https://github.com/abcdw/notes/blob/master/notes/20210805075718-the_modern_emacs.org">https://github.com/abcdw/notes/blob/master/notes/20210805075718-the_modern_emacs.org</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6a18a30" class="outline-2">
+<h2 id="org6a18a30"><span class="section-number-2">7</span> Out of scope</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+I try to avoid more complicated topics:
+</p>
+
+<ul class="org-ul">
+<li>packages and complex configuration</li>
+<li>programming in lisp</li>
+<li>spacemacs, emacs-doom and similar</li>
+<li>org-roam</li>
+<li>org-capture</li>
+<li>email with gnus</li>
+<li>git with magit</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org15263a0" class="outline-2">
+<h2 id="org15263a0"><span class="section-number-2">8</span> Appendix. Key binding cheatsheet</h2>
+<div class="outline-text-2" id="text-8">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Command</th>
+<th scope="col" class="org-left">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">M-x shell</td>
+<td class="org-left">Run Shell</td>
+</tr>
+
+<tr>
+<td class="org-left">C-s</td>
+<td class="org-left">Advanced search</td>
+</tr>
+
+<tr>
+<td class="org-left">C-c C-c</td>
+<td class="org-left">Toggle or recalculate</td>
+</tr>
+
+<tr>
+<td class="org-left">C-k C-y</td>
+<td class="org-left">Kill and undo line</td>
+</tr>
+
+<tr>
+<td class="org-left">C-g</td>
+<td class="org-left">Kill, stop or exit</td>
+</tr>
+
+<tr>
+<td class="org-left">C-g</td>
+<td class="org-left">Exit</td>
+</tr>
+
+<tr>
+<td class="org-left">ESC-ESC-ESC</td>
+<td class="org-left">Exit (hopefully)</td>
+</tr>
+
+<tr>
+<td class="org-left">q</td>
+<td class="org-left">Exit (sometimes)</td>
+</tr>
+
+<tr>
+<td class="org-left">C-c C-e h h</td>
+<td class="org-left">Create HTML</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>Not Emacs:</b></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Fn-Esc</td>
+<td class="org-left">Lock Fn key (Lenovo)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Евгений Погребняк</p>
+<p class="date">Created: 2021-08-17 Tue 00:01</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
