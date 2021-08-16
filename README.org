@@ -106,13 +106,16 @@ You can configure orgmode to use Shift-arrows for selection.
    - cycles TODO-DONE in header
    - selects in CUA mode
 
-:CUSTOM_ID: hyperlink1
+:PROPERTIES:
+:CUSTOM_ID: hyperlink_target
+:END:
 
 *** Create a hyperlink
 
   - Use =[[url][]]= syntax or C-c C-l
-  - Internal [[#hyperlink1][hyperlink here]]
+  - Internal [[#hyperlink_target][hyperlink here]]
   - Or [[file:ARCHIVE.org][link to file]]
+  - [[https://gist.github.com/will-henney/d8564133e07e546789c0][Link example]]
 
 *** Use timestamps
 
@@ -122,7 +125,8 @@ You can configure orgmode to use Shift-arrows for selection.
 
     - C-c . for timestamp
     - S-arrow for change
-    - QUESTION: How to put a timestamp with time, not just date?
+
+**** WIP How to put a timestamp with time, not just date? :QUESTION:
 
 *** Checkboxes
 
