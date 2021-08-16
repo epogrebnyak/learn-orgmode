@@ -35,28 +35,69 @@
   - `pandoc README.org -f org -t gfm -o README.md` (see pandoc [formats
     list](https://pandoc.org/MANUAL.html#general-options))
 
-## Learning in progress <span class="tag" data-tag-name="WIP"><span class="smallcaps">WIP</span></span>
-
-### Attempting X410 video system <span class="tag" data-tag-name="WIP"><span class="smallcaps">WIP</span></span>
-
-  - <https://emacsredux.com/blog/2020/09/23/using-emacs-on-windows-with-wsl2/>
-  - starts with two windows, must disable the tutorial window
-  - TODO: must buy from Windows store
-
 ## Emacs configuration
 
 ### Where is the config?
 
   - \~/.emacs is a file
   - \~/.emacs.d is a directory
-  - Q: what is th difference?
+  - QUESTION: what is the difference?
 
-### Setting org-support-shift-select and CUA options
+### Set `org-support-shift-select` and CUA option
 
   - Selecting with Shift is already built-in part of Emacs, but not
     org-mode
-  - Start with 'M-x customize' to find options
-  - Setting CUA is part of F10 menu
+  - Start with 'M-x customize' to find options about Shift selection
+  - Set CUA (Ctrl-Z/X/C/V) as part of F10 menu
+
+# Questions <span class="tag" data-tag-name="WIP"><span class="smallcaps">WIP</span></span>
+
+### Attempting X410 video system
+
+  - <https://emacsredux.com/blog/2020/09/23/using-emacs-on-windows-with-wsl2/>
+  - QUESTION: starts with two windows, must disable the tutorial window
+  - works now\!
+  - TODO: must buy from Windows store while discoutn lasts
+
+### Wanted \[0/2\]
+
+Specific:
+
+  - \[ \] Move line across headers, beyond own section (Alt - arrow has
+    limits within a header)
+  - \[ \] What does bottom line with `-UUU(DOS)**--F1` mean? What is it
+    called? How to remove it?
+  - \[ \] Make internal link in document
+
+General:
+
+  - \[ \] How does find and replace work?
+  - \[ \] Good workflow samples and file samples to learn from
+
+### Not critical \[0/5\]
+
+  - \[ \] Recalulcate list stats (I double click C-c C-c now to toggle
+    and recalculate)
+  - \[ \] Add timestamp with current time, not just date
+  - \[ \] Change selection color to lightblue (I did, but it did not
+    save)
+  - \[ \] View calendar
+  - \[ \] TOC
+
+### Not todo
+
+Things that are not a priority, on a cost-benefit basis:
+
+  - Editing configuration extensively
+  - Using elisp
+  - Use spacemacs or emacs-doom
+
+Other reasons:
+
+  - Fix wrong spacing of Russian fonts in Windows MSI Emacs GUI
+  - [Reload on file
+    change](https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer?newreg=a3feb7dd0515464f962f420449b8f1a5)
+    (will allow editing in VS Code)
 
 # Using orgmode
 
@@ -120,44 +161,14 @@ Question
 ## Other tasks
 
   - Sort this list based on completion is C-c ^
+
   - Add more cycling todo tags `#+SEQ_TODO:`
+
   - Archive tasks with menu
+
   - Defintion list with `::` separator
 
-# Remaining questions <span class="tag" data-tag-name="WIP"><span class="smallcaps">WIP</span></span>
-
-### Wanted \[0/2\]
-
-Specific:
-
-  - \[ \] Move line across headers, beyond own section (Alt - arrow has
-    limits within a header)
-  - \[ \] What does bottom line with `-UUU(DOS)**--F1` mean? What is it
-    called? How to remove it?
-
-General:
-
-  - \[ \] How does find and replace work?
-  - \[ \] Good workflow samples, file samples to learn from
-
-### Not critical \[0/5\]
-
-  - \[ \] Recalulcate list stats (I double click C-c C-c now to toggle
-    and recalculate)
-  - \[ \] Add timestamp with current time, not just date
-  - \[ \] Change selection color to lightblue (I did, but it did not
-    save)
-  - \[ \] View calendar
-  - \[ \] [Reload on file
-    change](https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer?newreg=a3feb7dd0515464f962f420449b8f1a5)
-    (will allow editing in VS Code)
-
-### Not todo
-
-  - Editing configuration or using elisp
-  - Use spacemacs or doom
-  - Fix wrong spacing of Russian fonts in Windows MSI Emacs GUI
-
+  - 
 # Reference
 
 ## Concepts
