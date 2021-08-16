@@ -68,7 +68,7 @@ My intents:
  - On WSL 1 works at [[https://x410.dev/cookbook/wsl/using-x410-with-wsl2/][127.0.0.1]]
  - One must buy X410 from Windows store (USD10 with discount), but it saves 
    a ton of time for configuration, including the fonts.
- - HELP NEEDED - cannot change keyboard to Russian in X410
+ - HELP NEEDED - cannot change keyboard to Russian in X410 - maybe need xfce.
    See https://x410.dev/cookbook/keyboard-layout/
  - QUESTION: =EMACS FILENAME &= starts with two windows, must disable the tutorial window.
 
@@ -153,7 +153,7 @@ My intents:
      - C-a key binding must be configured
      - QUESTION: how to close agenda buffer
 
-*** Clocking..
+*** WIP Clocking
     :LOGBOOK:
     CLOCK: [2021-08-16 Mon 14:29]--[2021-08-16 Mon 14:35] =>  0:06
     :END:
@@ -167,6 +167,8 @@ My intents:
     and typing C-c C-x C-i and clocking out with C-c C-x C-o.
     See the documentation for details.
  #+END_QUOTE
+
+    https://www.adventuresinwhy.com/post/org-mode-timekeeping/
 
 *** Other completed tasks
     - Sort this list is C-c ^
