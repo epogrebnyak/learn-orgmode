@@ -11,57 +11,60 @@
 
 <div class="INSTALL drawer">
 
-  - Running in cmder bash (ubuntu) with F10 to access menu
-  - Windows MSI (bad russian font)
+  - Running in cmder bash (ubuntu)
+  - Windows Emacs MSI (bad russian font spacing)
   - VSCode extension (no agenda view)
 
 </div>
 
 ### Improvements \[4/4\]
 
-  - \[X\] F10 may need Fnlock to work on Lenovo - use Fn-Esc.
-  - \[X\] Configure terminal to resolve [key binding
+  - F10 may need Fnlock to work on Lenovo - use Fn-Esc.
+  - Configure terminal to resolve [key binding
     conflicts](https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict)
     like Ctrl-C. See also `org-disputed-keys` in [Orgmode
     conflicts](https://orgmode.org/manual/Conflicts.html).
-  - \[X\] Launch emacs with filename `emacs -nw EMACS.org`
-  - \[X\] Use Shift for selection and CUA mode with more familiar key
+  - Launch emacs with filename `emacs -nw README.org`
+  - Use Shift for selection and CUA mode with more familiar key
     bindings.
+  - `pandoc README.org -f org -t gfm -o README.md` (see pandoc [formats
+    list](https://pandoc.org/MANUAL.html#general-options))
 
 ## Next steps
 
-### TODO Questions \[0/1\]
+### Nice to have \[0/2\]
 
-  - \[ \] What does bottom line with `-UUU(DOS)**--F1` mean?
-  - \[ \] How to remove it?
+  - \[ \] Move line across headers, beyond own section (Alt - arrow has
+    limits within a header)
+  - \[ \] What does bottom line with `-UUU(DOS)**--F1` mean? How to
+    remove it?
 
-### TODO How to \[0/1\]
-
-  - \[ \] See agenda view with all todos from this file
-  - \[ \] Move line across headers, beyond own section
-  - \[ \] Close agenda buffer
-
-### SOMEDAY Not critical \[0/8\]
+### Not critical \[0/5\]
 
   - \[ \] Recalulcate list stats
-  - \[ \] What is the difference between scheduled and deadline?
-  - \[ \] Export from orgmode to other formats (pandoc)
-  - \[ \] Add timestamp with current time
+  - \[ \] Add timestamp with current time, not just date
   - \[ \] Change selection color to lightblue (I did, but it did not
     save)
   - \[ \] View calendar
   - \[ \] [Reload on file
     change](https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer?newreg=a3feb7dd0515464f962f420449b8f1a5)
+    (will allow editing in VS Code)
 
-### DONE Finshed tasks \[5/5\]
+### CANCELLED Not todo
 
+  - Use spacemacs on Windows
+  - Fix wrong spacing of Russian fonts in Windows Emacs GUI
+
+### DONE Finshed tasks \[7/7\]
+
+  - \[X\] Sort this list based on completion is C-c ^
+  - \[X\] Add more cycling todo tags `#+SEQ_TODO:`
+  - \[X\] What is the difference between scheduled and deadline?
+  - \[X\] Archive tasks with menu
+  - \[X\] Create a link
+  - \[X\] Make a selection, copy and paste selection
   - \[X\] \* Use sterisk to add difficulty level / priority for plain
     text
-  - \[X\] Add more cycling todo tags `#+SEQ_TODO:`
-  - \[X\] Archive tasks
-  - \[X\] Create a link
-  - \[X\] Make a selection and copy selection
-  - \[X\] Sort this list based on completion is C-c ^
 
 ## Editing in orgmode
 
@@ -99,10 +102,11 @@ suggests:
   - You must type \[0/0\] or \[0%\] for checkbox
   - Only X counts for completion, not \`x\` or \`+\`
   - C-c C-c toggles and recalculates
+  - Q: what can recalcultae on its own?
   - Check Rainer König video [OrgMode E01S05:
     Checklists](https://www.youtube.com/watch?v=gvgfmED8RD4&list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE&index=5&t=444s)
 
-Sample cjekbox list \[2/3\], \[66%\]:
+Sample checkbox list \[2/3\], \[66%\]:
 
   - \[X\] Item 1
   - \[X\] Item 2
@@ -111,7 +115,14 @@ Sample cjekbox list \[2/3\], \[66%\]:
 ### Agenda
 
   - Use F10 and menu
-  - C-a must be configured
+  - C-a key binding must be configured
+
+<!-- end list -->
+
+1.  Question
+    <span class="tag" data-tag-name="QUESTION"><span class="smallcaps">QUESTION</span></span>
+    
+      - How to close agenda buffer
 
 ## Emacs configuration
 
@@ -119,6 +130,7 @@ Sample cjekbox list \[2/3\], \[66%\]:
 
   - \~/.emacs is a file
   - \~/.emacs.d is a directory
+  - Q: what is th difference?
 
 ### Setting org-support-shift-select and CUA options
 
@@ -127,13 +139,15 @@ Sample cjekbox list \[2/3\], \[66%\]:
   - Start with 'M-x customize' to find options
   - Setting CUA is part of F10 menu
 
-## Small reference
+## Reference
 
-### Concepts:
+### Concepts
 
   - "buffer" - a screen that represents a file or Emacs own
+  - "frame" - ?
+  - "window" - ?
 
-### Notation:
+### Notation
 
 \- \* is always a header
 
@@ -155,6 +169,10 @@ Extension:
 
 ## Blogs and success stories
 
-Why Orgmode:
-
+  - <https://sachachua.com/blog/2014/01/tips-learning-org-mode-emacs/>
   - <https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html>
+
+## Quotes
+
+> Everything should be made as simple as possible, but not any simpler
+> —Albert Einstein
