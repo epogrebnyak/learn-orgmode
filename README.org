@@ -174,13 +174,14 @@ M-x revert-buffer
 ** Agenda
 
     - Use F10 and menu for agenda view
-    - C-a - key binding must be configured
-
+ 
 **** QUESTION [A] Unsolved about agenda:
 
+    - [ ] Why is C-c a undefined? Shoud I define it?
     - [ ] How to sort agenda by priority?
     - [ ] How to close agenda buffer?
     - [ ] How to move across buffers?
+
 
 ** Clocking
     :LOGBOOK:
@@ -247,7 +248,14 @@ Start with just a bunch of TODOs, and slowly grow the system as you feel the nee
   - drawer box has :NAME: and :END:
 
 * Links
+
+# FIXME: add links from mobile history
+
 ** Videos
+
+New:
+
+ - https://cestlaz.github.io/stories/emacs/
 
 Essential:
 
@@ -277,6 +285,7 @@ Academic:
  - https://github.com/zkat/sheeple/blob/5393c74737ccf22c3fd5f390076b75c38453cb04/presentation/sheeple-talk-22-10-09.org
  - https://raw.githubusercontent.com/ymd-h/cpprb/c44cf5d53f807e58f71d1a2e1cf46aa92b5e193d/README.org
  - https://raw.githubusercontent.com/deopurkar/ag2021/f73c35fede17a123806102306ce0c47bc2a87cd9/course.org
+ - https://raw.githubusercontent.com/Literate-DevOps/literate-programming-tutorials/0dcff18ae2047fb46df1edc2cde7b2ea0cb57a12/how-to/01-assassinate-the-archbishop-of-canterbury-in-1170-ce/how-to-assassinate-the-archbishop-of-canterbury-in-1170-ce.org
 
 * Out of scope
 
@@ -290,23 +299,24 @@ I try to avoid more complicated topics:
 - org-capture
 - email with gnus
 - git with magit 
+- export to latex and beamer
 	      
 * Appendix. Key binding cheatsheet
 
-| Command      | Action                 |
-|--------------+------------------------|
-| M-x <command>    | Run command by name              |
-| M-x shell    | Run Shell              |
-| F10          | Upper menu        |
-| C-s          | Advanced search        |
-| C-c C-c      | Toggle or recalculate  |
-| C-k C-y      | Kill and undo line     |
-| C-g          | Kill, stop or exit     |
-| ESC-ESC-ESC  | Exit (hopefully)       |
-| q            | Exit (sometimes)       |
-| C-c C-e h h  | Create HTML            |
-| *Not Emacs:* |                        |
-| Fn-Esc       | Lock Fn key (Lenovo)   |
+| Command       | Action                |
+|---------------+-----------------------|
+| M-x <command> | Run command by name   |
+| M-x shell     | Run Shell             |
+| F10           | Upper menu            |
+| C-s           | Advanced search       |
+| C-c C-c       | Toggle or recalculate |
+| C-k C-y       | Kill and undo line    |
+| C-g           | Kill, stop or exit    |
+| ESC-ESC-ESC   | Exit (hopefully)      |
+| q             | Exit (sometimes)      |
+| C-c C-e h h   | Create HTML           |
+| *Not Emacs:*  |                       |
+| Fn-Esc        | Lock Fn key (Lenovo)  |
 
 M-x:
  - revert-buffer (in File menu)
