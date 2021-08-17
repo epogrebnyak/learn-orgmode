@@ -1,19 +1,28 @@
 #+AUTHOR:    Евгений Погребняк
 #+TITLE:     Learning Emacs Org-Mode
 #+EMAIL:     e.pogrebnyak@gmail.com
-#+SEQ_TODO:  WAITING(w) TODO(t) WIP(p) NEED_HELP(h) SOMEDAY(s) | DONE(d) CANCELLED(f)
+#+SEQ_TODO:  MAYBE(m) QUESTION(q) TODO(t) DOING(d) DELEGATED(e) WAITING(w) | DONE(+) CANCELLED(c) SOMEDAY(s)
 #+ARCHIVE:   ARCHIVE.org::
 #+OPTIONS:   toc:3
 
 In this file I add new things I learn about Emacs and orgmode.
+=QUESTION= and =#FIXME= mark section where help is needed.
+
+# FIMXE: long load time (check too many packages)
 
 * Starting Emacs
 
 ** Options to run Emacs
 
-- [x] WSL in cmder terminal, bash console (Ubuntu)
-- [ ] Windows Emacs MSI (bad Russian font spacing)
-- [x] VSCode extension (no agenda view)
+- [X] WSL in terminal (I use cmder) with bash (Ubuntu)
+- [X] XServ graphics
+- [X] VSCode extension (no agenda view)
+- [ ] Windows Emacs MSI executable (bad Russian font spacing)
+
+# FIXME - exclide this from html output
+:NOTE:
+Console vs teminal vs shell.
+:END:
 
 ** Basic pipeline
 
@@ -26,7 +35,7 @@ In this file I add new things I learn about Emacs and orgmode.
 
 ** Improvements and changes
 
-*** DONE Configure terminal to avoid key conflicts:
+*** DONE Configure terminal to avoid key conflicts
 
 Must configure terminal to resolve 
 [[https://emacs.stackexchange.com/questions/68105/how-to-use-ctrl-c-on-wsl-key-binding-conflict][key binding conflicts]] 
@@ -42,7 +51,7 @@ like Ctrl-C.
 *** DONE Where is the config?
   
 Use just one, any of them:
-  - ~/.emacs is a file
+  - ~/.emacs is a config file
   - ~/.emacs.d is a directory with init.el
 
 *** WIP Using X410 video system                                       
@@ -51,33 +60,56 @@ Use just one, any of them:
   - On WSL 1 works at [[https://x410.dev/cookbook/wsl/using-x410-with-wsl2/][127.0.0.1]]
   - One must buy X410 from Windows store (USD10 with discount), 
     but it saves a ton of time for configuration, including the fonts.
+
+**** QUESTION [A] Change keyboard layout in X410     
   - HELP NEEDED: cannot change [[https://x410.dev/cookbook/keyboard-layout/][keyboard layout]] 
                 to Russian in X410 - maybe need xfce.
+
+**** QUESTION [C] Startup behaviour change
   - QUESTION: =EMACS FILENAME &= starts with two windows, 
               how to disable the tutorial window (either .emacs or flag in command line)? 
-
+	      
 * Using Emacs
 
 ** Make a selection, copy and paste selection 
 
 You can configure orgmode to use Shift-arrows for selection.
+See =org-support-shift-select=.
 
-** WIP Finding and replacing text
+** QUESTION [C] Finding and replacing text
 
 Unsure how it works on emacs, is it C-s? What about replace?
+Please recommend some tutorial on this?
 
-** WIP Working with windows 
+** QUESTION [B] Working with windows 
 
 I currently use <Remove other windows> from File menu.
 Maybe I can do better.
 
-** WIP How to select a vertical block of text?
+** QUESTION [A] How to select a vertical block of text?
 
-Similar to Alt-Shift in Notepad++.
+Similar to Alt-Shift-arrows in Notepad++.
 
 ** Run bash
 
-   M-X shell
+~M-X shell
+
+** QUESTION [B] How to run some command from a command line?
+
+Imagine I needed something like 
+
+~emacs README.md --run "C-c C-e h h"
+
+How would it do it?
+
+** DONE Refresh file from disk
+
+The command is *M-x revert-buffer* 
+([[https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer][details]]).
+
+** Is there somethign similar to prettoer or black code formatter for org files?
+
+M-x revert-buffer 
 
 * Using orgmode
 ** <TAB> is all you need
@@ -94,12 +126,20 @@ Similar to Alt-Shift in Notepad++.
    - cycles TODO-DONE in header
    - selects in CUA mode
 
-**** WIP Move line across headers, beyond own section (Alt - arrow has limits within a header)    
+**** WAITING Move line across headers beyond own section 
+
+  - Alt - arrow has limits within a header  
+  - In VS Code Alt Up/Down move line wherever
+  - Is there some key combination that moves lines across file
+  - Currently using C-k C-y
+  - Shift-Arrow-Up/Down maybe?
+  - https://emacs.stackexchange.com/questions/68140/unrestricted-movement-of-lines-alt-up-down
 
 ** Create a hyperlink
    :PROPERTIES:
    :CUSTOM_ID: hyperlink_target
    :END:
+# FIXME: The above does not seem to an <a > anchor
 
  - Use =[[url][]]= syntax or C-c C-l
  - Internal [[#hyperlink_target][hyperlink here]]
@@ -115,7 +155,7 @@ Similar to Alt-Shift in Notepad++.
     - C-c . for timestamp
     - S-arrow for change
 
-**** WIP How to put a timestamp with time, not just date? :QUESTION:
+**** QUESTION [A] How to put a timestamp with time, not just date?
 
 ** Checkboxes
 
@@ -133,14 +173,16 @@ Similar to Alt-Shift in Notepad++.
        
 ** Agenda
 
-     - Use F10 and menu for agenda view
-     - C-a - key binding must be configured
+    - Use F10 and menu for agenda view
+    - C-a - key binding must be configured
 
-**** WIP Unsolved about agenda:
+**** QUESTION [A] Unsolved about agenda:
 
-     - [ ] What useful things do you do with agenda?
-     - [ ] How to close agenda buffer
-** WIP Clocking
+    - [ ] How to sort agenda by priority?
+    - [ ] How to close agenda buffer?
+    - [ ] How to move across buffers?
+
+** Clocking
     :LOGBOOK:
     CLOCK: [2021-08-16 Mon 14:29]--[2021-08-16 Mon 14:35] =>  0:06
     :END:
@@ -152,28 +194,34 @@ Similar to Alt-Shift in Notepad++.
  #+BEGIN_QUOTE
     It is easy to “clock-in” to a particular task by positioning point within an item 
     and typing C-c C-x C-i and clocking out with C-c C-x C-o.
-    See the documentation for details.
  #+END_QUOTE
 
     https://www.adventuresinwhy.com/post/org-mode-timekeeping/
 
+
+**** QUESTION [B] What are useful habit with clocking?
+
+  - Does pomodoro help?
+   
 ** Table
 
  - Start table from menu
  - C-c C-c to format
 
 ** Calendar
-How to view calendar (it was popping up accidantally when I hit something wrong)
 
-** Some other completed tasks
+How to view calendar (it was popping up accidantally when I hit something wrong).
+
+** Other actions
+
     - Sort this list is C-c ^
-    - Add more cycling todo tags =#+SEQ_TODO:= 
-    - Archive tasks through menu
+    - Add cycling todo tags =#+SEQ_TODO:= 
+    - Archive tasks through Org menu
     - Defintion list with =::= separator
     - Github search for org files with =[[https://github.com/search?o=asc&q=language%3Aorg&s=indexed&type=Code][language:org]]=
     - C-k C-y can move lines
 
-* WIP Scenarios
+* QUESTION [A] Useful scenarios
 
 What are productive scenarios for using org-mode?
 
@@ -216,13 +264,19 @@ Academic:
  - [[https://arxiv.org/abs/2008.06030][On the design of text editors]]
 
 ** Blogs and success stories
- 
+   
  - https://sachachua.com/blog/2014/01/tips-learning-org-mode-emacs/
  - https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html
+
+**** TODO [C] add images from sachachua.com
+**** TODO [C] redraw mindmap to simplify
 
 ** Orgfiles on github
 
  - https://github.com/abcdw/notes/blob/master/notes/20210805075718-the_modern_emacs.org
+ - https://github.com/zkat/sheeple/blob/5393c74737ccf22c3fd5f390076b75c38453cb04/presentation/sheeple-talk-22-10-09.org
+ - https://raw.githubusercontent.com/ymd-h/cpprb/c44cf5d53f807e58f71d1a2e1cf46aa92b5e193d/README.org
+ - https://raw.githubusercontent.com/deopurkar/ag2021/f73c35fede17a123806102306ce0c47bc2a87cd9/course.org
 
 * Out of scope
 
@@ -231,6 +285,7 @@ I try to avoid more complicated topics:
 - packages and complex configuration
 - programming in lisp
 - spacemacs, emacs-doom and similar
+# Fixme - add link to emacs survey resul answers
 - org-roam
 - org-capture
 - email with gnus
@@ -238,14 +293,22 @@ I try to avoid more complicated topics:
 	      
 * Appendix. Key binding cheatsheet
 
-| Command     | Action                 |
-|-------------+------------------------|
-| M-x shell   | Run Shell              |
-| C-g         | Kill or stop something |
-| C-s         | Advanced search        |
-| C-c C-c     | Toggle or recalculate  |
-| C-k C-y     | Kill and undo line     |
-| C-g         | Exit                   |
-| ESC-ESC-ESC | Exit (hopefully)       |
-| q           | Exit (sometimes)       |
-| Fn-Esc      | Lock Fn key (Lenovo)   |         
+| Command      | Action                 |
+|--------------+------------------------|
+| M-x <command>    | Run command by name              |
+| M-x shell    | Run Shell              |
+| F10          | Upper menu        |
+| C-s          | Advanced search        |
+| C-c C-c      | Toggle or recalculate  |
+| C-k C-y      | Kill and undo line     |
+| C-g          | Kill, stop or exit     |
+| ESC-ESC-ESC  | Exit (hopefully)       |
+| q            | Exit (sometimes)       |
+| C-c C-e h h  | Create HTML            |
+| *Not Emacs:* |                        |
+| Fn-Esc       | Lock Fn key (Lenovo)   |
+
+M-x:
+ - revert-buffer (in File menu)
+ - customize
+ - shell

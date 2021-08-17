@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-08-17 Tue 00:01 -->
+<!-- 2021-08-17 Tue 09:18 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Learning Emacs Org-Mode</title>
@@ -234,85 +234,92 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd57aefb">1. Starting Emacs</a>
+<li><a href="#org56b3c0b">1. Starting Emacs</a>
 <ul>
-<li><a href="#org232672d">1.1. Options to run Emacs</a></li>
-<li><a href="#org69349c6">1.2. Basic pipeline</a></li>
-<li><a href="#org01fecde">1.3. Improvements and changes</a>
+<li><a href="#org89f661a">1.1. Options to run Emacs</a></li>
+<li><a href="#org10feedb">1.2. Basic pipeline</a></li>
+<li><a href="#org18f835e">1.3. Improvements and changes</a>
 <ul>
-<li><a href="#org074c0ee">1.3.1. <span class="done DONE">DONE</span> Configure terminal to avoid key conflicts:</a></li>
-<li><a href="#org99e7a1d">1.3.2. <span class="done DONE">DONE</span> Set <code>org-support-shift-select</code> and CUA option</a></li>
-<li><a href="#org913e4d2">1.3.3. <span class="done DONE">DONE</span> Where is the config?</a></li>
-<li><a href="#orgc65ac44">1.3.4. <span class="todo WIP">WIP</span> Using X410 video system</a></li>
+<li><a href="#orgddb5dad">1.3.1. <span class="done DONE">DONE</span> Configure terminal to avoid key conflicts</a></li>
+<li><a href="#org43b9a73">1.3.2. <span class="done DONE">DONE</span> Set <code>org-support-shift-select</code> and CUA option</a></li>
+<li><a href="#org0d244ab">1.3.3. <span class="done DONE">DONE</span> Where is the config?</a></li>
+<li><a href="#org501d626">1.3.4. WIP Using X410 video system</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org751d3eb">2. Using Emacs</a>
+<li><a href="#orgf7a0517">2. Using Emacs</a>
 <ul>
-<li><a href="#orgfdf94ad">2.1. Make a selection, copy and paste selection</a></li>
-<li><a href="#org0e9ab79">2.2. <span class="todo WIP">WIP</span> Finding and replacing text</a></li>
-<li><a href="#orgce2e249">2.3. <span class="todo WIP">WIP</span> Working with windows</a></li>
-<li><a href="#orgfb4b381">2.4. <span class="todo WIP">WIP</span> How to select a vertical block of text?</a></li>
-<li><a href="#org85139d4">2.5. Run bash</a></li>
+<li><a href="#org89db197">2.1. Make a selection, copy and paste selection</a></li>
+<li><a href="#orgfe58cff">2.2. <span class="todo QUESTION">QUESTION</span> [C] Finding and replacing text</a></li>
+<li><a href="#org1a399eb">2.3. <span class="todo QUESTION">QUESTION</span> [B] Working with windows</a></li>
+<li><a href="#org2a0caa9">2.4. <span class="todo QUESTION">QUESTION</span> [A] How to select a vertical block of text?</a></li>
+<li><a href="#org0a07ae8">2.5. Run bash</a></li>
+<li><a href="#org195f95b">2.6. <span class="todo QUESTION">QUESTION</span> [B] How to run some command from a command line?</a></li>
+<li><a href="#org5bf22af">2.7. <span class="done DONE">DONE</span> Refresh file from disk</a></li>
+<li><a href="#orge006797">2.8. Is there somethign similar to prettoer or black code formatter for org files?</a></li>
 </ul>
 </li>
-<li><a href="#org6f3addc">3. Using orgmode</a>
+<li><a href="#org43bdd4f">3. Using orgmode</a>
 <ul>
-<li><a href="#org2c7cf55">3.1. &lt;TAB&gt; is all you need</a></li>
-<li><a href="#orgd0de37d">3.2. Getting around headers</a></li>
+<li><a href="#org46fec1f">3.1. &lt;TAB&gt; is all you need</a></li>
+<li><a href="#orgffb3e0c">3.2. Getting around headers</a></li>
 <li><a href="#hyperlink_target">3.3. Create a hyperlink</a></li>
-<li><a href="#org3336226">3.4. Use timestamps</a></li>
-<li><a href="#org94bf27a">3.5. Checkboxes</a></li>
-<li><a href="#org1ee2b3a">3.6. Agenda</a></li>
-<li><a href="#orgf059c24">3.7. <span class="todo WIP">WIP</span> Clocking</a></li>
-<li><a href="#org5ba45d7">3.8. Table</a></li>
-<li><a href="#org23d1775">3.9. Calendar</a></li>
-<li><a href="#orgc64afaa">3.10. Some other completed tasks</a></li>
+<li><a href="#org1d439eb">3.4. Use timestamps</a></li>
+<li><a href="#orgdcecafb">3.5. Checkboxes</a></li>
+<li><a href="#orgb11c430">3.6. Agenda</a></li>
+<li><a href="#org90aff11">3.7. Clocking</a></li>
+<li><a href="#org3defc21">3.8. Table</a></li>
+<li><a href="#org8b642dd">3.9. Calendar</a></li>
+<li><a href="#orgb2e9b05">3.10. Other actions</a></li>
 </ul>
 </li>
-<li><a href="#org9fe6c26">4. <span class="todo WIP">WIP</span> Scenarios</a></li>
-<li><a href="#org99861a0">5. Reference</a>
+<li><a href="#org9cd1794">4. <span class="todo QUESTION">QUESTION</span> [A] Useful scenarios</a></li>
+<li><a href="#orgaae8ed1">5. Reference</a>
 <ul>
-<li><a href="#orga003945">5.1. Concepts</a></li>
-<li><a href="#orgec7386f">5.2. Notation</a></li>
+<li><a href="#org2e7fd81">5.1. Concepts</a></li>
+<li><a href="#orgf408bd9">5.2. Notation</a></li>
 </ul>
 </li>
-<li><a href="#org33f4591">6. Links</a>
+<li><a href="#orgb4514c0">6. Links</a>
 <ul>
-<li><a href="#org0350601">6.1. Videos</a></li>
-<li><a href="#org0275990">6.2. Blogs and success stories</a></li>
-<li><a href="#org1b431e0">6.3. Orgfiles on github</a></li>
+<li><a href="#org79255b8">6.1. Videos</a></li>
+<li><a href="#orgf935bac">6.2. Blogs and success stories</a></li>
+<li><a href="#org19ad835">6.3. Orgfiles on github</a></li>
 </ul>
 </li>
-<li><a href="#org6a18a30">7. Out of scope</a></li>
-<li><a href="#org15263a0">8. Appendix. Key binding cheatsheet</a></li>
+<li><a href="#org41f19a2">7. Out of scope</a></li>
+<li><a href="#org3107b7f">8. Appendix. Key binding cheatsheet</a></li>
 </ul>
 </div>
 </div>
 <p>
 In this file I add new things I learn about Emacs and orgmode.
+<code>QUESTION</code> and <code>#FIXME</code> mark section where help is needed.
 </p>
 
-
-
-<div id="outline-container-orgd57aefb" class="outline-2">
-<h2 id="orgd57aefb"><span class="section-number-2">1</span> Starting Emacs</h2>
+<div id="outline-container-org56b3c0b" class="outline-2">
+<h2 id="org56b3c0b"><span class="section-number-2">1</span> Starting Emacs</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org232672d" class="outline-3">
-<h3 id="org232672d"><span class="section-number-3">1.1</span> Options to run Emacs</h3>
+<div id="outline-container-org89f661a" class="outline-3">
+<h3 id="org89f661a"><span class="section-number-3">1.1</span> Options to run Emacs</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
-<li>WSL in cmder terminal, bash console (Ubuntu)</li>
-<li class="off"><code>[&#xa0;]</code> Windows Emacs MSI (bad Russian font spacing)</li>
-<li>VSCode extension (no agenda view)</li>
+<li class="on"><code>[X]</code> WSL in terminal (I use cmder) with bash (Ubuntu)</li>
+<li class="on"><code>[X]</code> XServ graphics</li>
+<li class="on"><code>[X]</code> VSCode extension (no agenda view)</li>
+<li class="off"><code>[&#xa0;]</code> Windows Emacs MSI executable (bad Russian font spacing)</li>
 </ul>
+
+<p>
+Console vs teminal vs shell.
+</p>
 </div>
 </div>
 
-<div id="outline-container-org69349c6" class="outline-3">
-<h3 id="org69349c6"><span class="section-number-3">1.2</span> Basic pipeline</h3>
+<div id="outline-container-org10feedb" class="outline-3">
+<h3 id="org10feedb"><span class="section-number-3">1.2</span> Basic pipeline</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>Install emacs on WSL with <code>sudo apt-get install emacs</code></li>
@@ -325,12 +332,12 @@ In this file I add new things I learn about Emacs and orgmode.
 </div>
 </div>
 
-<div id="outline-container-org01fecde" class="outline-3">
-<h3 id="org01fecde"><span class="section-number-3">1.3</span> Improvements and changes</h3>
+<div id="outline-container-org18f835e" class="outline-3">
+<h3 id="org18f835e"><span class="section-number-3">1.3</span> Improvements and changes</h3>
 <div class="outline-text-3" id="text-1-3">
 </div>
-<div id="outline-container-org074c0ee" class="outline-4">
-<h4 id="org074c0ee"><span class="section-number-4">1.3.1</span> <span class="done DONE">DONE</span> Configure terminal to avoid key conflicts:</h4>
+<div id="outline-container-orgddb5dad" class="outline-4">
+<h4 id="orgddb5dad"><span class="section-number-4">1.3.1</span> <span class="done DONE">DONE</span> Configure terminal to avoid key conflicts</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
 Must configure terminal to resolve 
@@ -340,8 +347,8 @@ like Ctrl-C.
 </div>
 </div>
 
-<div id="outline-container-org99e7a1d" class="outline-4">
-<h4 id="org99e7a1d"><span class="section-number-4">1.3.2</span> <span class="done DONE">DONE</span> Set <code>org-support-shift-select</code> and CUA option</h4>
+<div id="outline-container-org43b9a73" class="outline-4">
+<h4 id="org43b9a73"><span class="section-number-4">1.3.2</span> <span class="done DONE">DONE</span> Set <code>org-support-shift-select</code> and CUA option</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <ul class="org-ul">
 <li>Selection with Shift is already built-in part of Emacs, but not org-mode</li>
@@ -353,61 +360,79 @@ like Ctrl-C.
 </div>
 </div>
 
-<div id="outline-container-org913e4d2" class="outline-4">
-<h4 id="org913e4d2"><span class="section-number-4">1.3.3</span> <span class="done DONE">DONE</span> Where is the config?</h4>
+<div id="outline-container-org0d244ab" class="outline-4">
+<h4 id="org0d244ab"><span class="section-number-4">1.3.3</span> <span class="done DONE">DONE</span> Where is the config?</h4>
 <div class="outline-text-4" id="text-1-3-3">
 <p>
 Use just one, any of them:
 </p>
 <ul class="org-ul">
-<li>~/.emacs is a file</li>
+<li>~/.emacs is a config file</li>
 <li>~/.emacs.d is a directory with init.el</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgc65ac44" class="outline-4">
-<h4 id="orgc65ac44"><span class="section-number-4">1.3.4</span> <span class="todo WIP">WIP</span> Using X410 video system</h4>
+<div id="outline-container-org501d626" class="outline-4">
+<h4 id="org501d626"><span class="section-number-4">1.3.4</span> WIP Using X410 video system</h4>
 <div class="outline-text-4" id="text-1-3-4">
 <ul class="org-ul">
 <li><a href="https://emacsredux.com/blog/2020/09/23/using-emacs-on-windows-with-wsl2/">Original article with X410 recommendation</a></li>
 <li>On WSL 1 works at <a href="https://x410.dev/cookbook/wsl/using-x410-with-wsl2/">127.0.0.1</a></li>
 <li>One must buy X410 from Windows store (USD10 with discount), 
 but it saves a ton of time for configuration, including the fonts.</li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="org570546e"></a><span class="todo QUESTION">QUESTION</span> [A] Change keyboard layout in X410<br />
+<div class="outline-text-5" id="text-1-3-4-1">
+<ul class="org-ul">
 <li>HELP NEEDED: cannot change <a href="https://x410.dev/cookbook/keyboard-layout/">keyboard layout</a> 
 to Russian in X410 - maybe need xfce.</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org1b7fca9"></a><span class="todo QUESTION">QUESTION</span> [C] Startup behaviour change<br />
+<div class="outline-text-5" id="text-1-3-4-2">
+<ul class="org-ul">
 <li>QUESTION: <code>EMACS FILENAME &amp;</code> starts with two windows, 
 how to disable the tutorial window (either .emacs or flag in command line)?</li>
 </ul>
 </div>
+</li>
+</ol>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org751d3eb" class="outline-2">
-<h2 id="org751d3eb"><span class="section-number-2">2</span> Using Emacs</h2>
+<div id="outline-container-orgf7a0517" class="outline-2">
+<h2 id="orgf7a0517"><span class="section-number-2">2</span> Using Emacs</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgfdf94ad" class="outline-3">
-<h3 id="orgfdf94ad"><span class="section-number-3">2.1</span> Make a selection, copy and paste selection</h3>
+<div id="outline-container-org89db197" class="outline-3">
+<h3 id="org89db197"><span class="section-number-3">2.1</span> Make a selection, copy and paste selection</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 You can configure orgmode to use Shift-arrows for selection.
+See <code>org-support-shift-select</code>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org0e9ab79" class="outline-3">
-<h3 id="org0e9ab79"><span class="section-number-3">2.2</span> <span class="todo WIP">WIP</span> Finding and replacing text</h3>
+<div id="outline-container-orgfe58cff" class="outline-3">
+<h3 id="orgfe58cff"><span class="section-number-3">2.2</span> <span class="todo QUESTION">QUESTION</span> [C] Finding and replacing text</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Unsure how it works on emacs, is it C-s? What about replace?
+Please recommend some tutorial on this?
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgce2e249" class="outline-3">
-<h3 id="orgce2e249"><span class="section-number-3">2.3</span> <span class="todo WIP">WIP</span> Working with windows</h3>
+<div id="outline-container-org1a399eb" class="outline-3">
+<h3 id="org1a399eb"><span class="section-number-3">2.3</span> <span class="todo QUESTION">QUESTION</span> [B] Working with windows</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 I currently use &lt;Remove other windows&gt; from File menu.
@@ -416,31 +441,67 @@ Maybe I can do better.
 </div>
 </div>
 
-<div id="outline-container-orgfb4b381" class="outline-3">
-<h3 id="orgfb4b381"><span class="section-number-3">2.4</span> <span class="todo WIP">WIP</span> How to select a vertical block of text?</h3>
+<div id="outline-container-org2a0caa9" class="outline-3">
+<h3 id="org2a0caa9"><span class="section-number-3">2.4</span> <span class="todo QUESTION">QUESTION</span> [A] How to select a vertical block of text?</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
-Similar to Alt-Shift in Notepad++.
+Similar to Alt-Shift-arrows in Notepad++.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org85139d4" class="outline-3">
-<h3 id="org85139d4"><span class="section-number-3">2.5</span> Run bash</h3>
+<div id="outline-container-org0a07ae8" class="outline-3">
+<h3 id="org0a07ae8"><span class="section-number-3">2.5</span> Run bash</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
-M-X shell
+~M-X shell
+</p>
+</div>
+</div>
+
+<div id="outline-container-org195f95b" class="outline-3">
+<h3 id="org195f95b"><span class="section-number-3">2.6</span> <span class="todo QUESTION">QUESTION</span> [B] How to run some command from a command line?</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+Imagine I needed something like 
+</p>
+
+<p>
+~emacs README.md &#x2013;run "C-c C-e h h"
+</p>
+
+<p>
+How would it do it?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5bf22af" class="outline-3">
+<h3 id="org5bf22af"><span class="section-number-3">2.7</span> <span class="done DONE">DONE</span> Refresh file from disk</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+The command is <b>M-x revert-buffer</b> 
+(<a href="https://emacs.stackexchange.com/questions/169/how-do-i-reload-a-file-in-a-buffer">details</a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge006797" class="outline-3">
+<h3 id="orge006797"><span class="section-number-3">2.8</span> Is there somethign similar to prettoer or black code formatter for org files?</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+M-x revert-buffer 
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org6f3addc" class="outline-2">
-<h2 id="org6f3addc"><span class="section-number-2">3</span> Using orgmode</h2>
+<div id="outline-container-org43bdd4f" class="outline-2">
+<h2 id="org43bdd4f"><span class="section-number-2">3</span> Using orgmode</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org2c7cf55" class="outline-3">
-<h3 id="org2c7cf55"><span class="section-number-3">3.1</span> &lt;TAB&gt; is all you need</h3>
+<div id="outline-container-org46fec1f" class="outline-3">
+<h3 id="org46fec1f"><span class="section-number-3">3.1</span> &lt;TAB&gt; is all you need</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>TAB shows/hides headers (quite powerful!)</li>
@@ -449,8 +510,8 @@ M-X shell
 </div>
 </div>
 
-<div id="outline-container-orgd0de37d" class="outline-3">
-<h3 id="orgd0de37d"><span class="section-number-3">3.2</span> Getting around headers</h3>
+<div id="outline-container-orgffb3e0c" class="outline-3">
+<h3 id="orgffb3e0c"><span class="section-number-3">3.2</span> Getting around headers</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>Alt + left or right changes header level</li>
@@ -465,12 +526,23 @@ M-X shell
 </div>
 
 <ol class="org-ol">
-<li><a id="orgbd03140"></a><span class="todo WIP">WIP</span> Move line across headers, beyond own section (Alt - arrow has limits within a header)<br /></li>
+<li><a id="orgb4b7975"></a><span class="todo WAITING">WAITING</span> Move line across headers beyond own section<br />
+<div class="outline-text-5" id="text-3-2-0-1">
+<ul class="org-ul">
+<li>Alt - arrow has limits within a header</li>
+<li>In VS Code Alt Up/Down move line wherever</li>
+<li>Is there some key combination that moves lines across file</li>
+<li>Currently using C-k C-y</li>
+<li>Shift-Arrow-Up/Down maybe?</li>
+<li><a href="https://emacs.stackexchange.com/questions/68140/unrestricted-movement-of-lines-alt-up-down">https://emacs.stackexchange.com/questions/68140/unrestricted-movement-of-lines-alt-up-down</a></li>
+</ul>
+</div>
+</li>
 </ol>
 </div>
 
-<div id="outline-container-org0d90e2e" class="outline-3">
-<h3 id="hyperlink_target"><a id="org0d90e2e"></a><span class="section-number-3">3.3</span> Create a hyperlink</h3>
+<div id="outline-container-org1c6bf9e" class="outline-3">
+<h3 id="hyperlink_target"><a id="org1c6bf9e"></a><span class="section-number-3">3.3</span> Create a hyperlink</h3>
 <div class="outline-text-3" id="text-hyperlink_target">
 <ul class="org-ul">
 <li>Use <code>[[url][]]</code> syntax or C-c C-l</li>
@@ -481,8 +553,8 @@ M-X shell
 </div>
 </div>
 
-<div id="outline-container-org3336226" class="outline-3">
-<h3 id="org3336226"><span class="section-number-3">3.4</span> Use timestamps</h3>
+<div id="outline-container-org1d439eb" class="outline-3">
+<h3 id="org1d439eb"><span class="section-number-3">3.4</span> Use timestamps</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-08-15 Sun&gt;</span></span>
@@ -499,12 +571,12 @@ As <a href="https://orgmode.org/guide/Creating-Timestamps.html#Creating-Timestam
 </div>
 
 <ol class="org-ol">
-<li><a id="org72e7410"></a><span class="todo WIP">WIP</span> How to put a timestamp with time, not just date?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="QUESTION">QUESTION</span></span><br /></li>
+<li><a id="org408f2f4"></a><span class="todo QUESTION">QUESTION</span> [A] How to put a timestamp with time, not just date?<br /></li>
 </ol>
 </div>
 
-<div id="outline-container-org94bf27a" class="outline-3">
-<h3 id="org94bf27a"><span class="section-number-3">3.5</span> Checkboxes</h3>
+<div id="outline-container-orgdcecafb" class="outline-3">
+<h3 id="orgdcecafb"><span class="section-number-3">3.5</span> Checkboxes</h3>
 <div class="outline-text-3" id="text-3-5">
 <ul class="org-ul">
 <li>You must type <code>[0/0]</code> or <code>[0%]</code> for checkbox</li>
@@ -526,8 +598,8 @@ Sample checkbox list <code>[2/3]</code>, <code>[66%]</code>:
 </div>
 </div>
 
-<div id="outline-container-org1ee2b3a" class="outline-3">
-<h3 id="org1ee2b3a"><span class="section-number-3">3.6</span> Agenda</h3>
+<div id="outline-container-orgb11c430" class="outline-3">
+<h3 id="orgb11c430"><span class="section-number-3">3.6</span> Agenda</h3>
 <div class="outline-text-3" id="text-3-6">
 <ul class="org-ul">
 <li>Use F10 and menu for agenda view</li>
@@ -536,18 +608,20 @@ Sample checkbox list <code>[2/3]</code>, <code>[66%]</code>:
 </div>
 
 <ol class="org-ol">
-<li><a id="org61dff24"></a><span class="todo WIP">WIP</span> Unsolved about agenda:<br />
+<li><a id="org9859f0b"></a><span class="todo QUESTION">QUESTION</span> [A] Unsolved about agenda:<br />
 <div class="outline-text-5" id="text-3-6-0-1">
 <ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> What useful things do you do with agenda?</li>
-<li class="off"><code>[&#xa0;]</code> How to close agenda buffer</li>
+<li class="off"><code>[&#xa0;]</code> How to sort agenda by priority?</li>
+<li class="off"><code>[&#xa0;]</code> How to close agenda buffer?</li>
+<li class="off"><code>[&#xa0;]</code> How to move across buffers?</li>
 </ul>
 </div>
 </li>
 </ol>
 </div>
-<div id="outline-container-orgf059c24" class="outline-3">
-<h3 id="orgf059c24"><span class="section-number-3">3.7</span> <span class="todo WIP">WIP</span> Clocking</h3>
+
+<div id="outline-container-org90aff11" class="outline-3">
+<h3 id="org90aff11"><span class="section-number-3">3.7</span> Clocking</h3>
 <div class="outline-text-3" id="text-3-7">
 <p>
 <b>*</b> Clock this!
@@ -561,7 +635,6 @@ Sample checkbox list <code>[2/3]</code>, <code>[66%]</code>:
 <p>
 It is easy to “clock-in” to a particular task by positioning point within an item 
 and typing C-c C-x C-i and clocking out with C-c C-x C-o.
-See the documentation for details.
 </p>
 </blockquote>
 
@@ -569,10 +642,21 @@ See the documentation for details.
 <a href="https://www.adventuresinwhy.com/post/org-mode-timekeeping/">https://www.adventuresinwhy.com/post/org-mode-timekeeping/</a>
 </p>
 </div>
+
+
+<ol class="org-ol">
+<li><a id="org064f225"></a><span class="todo QUESTION">QUESTION</span> [B] What are useful habit with clocking?<br />
+<div class="outline-text-5" id="text-3-7-0-1">
+<ul class="org-ul">
+<li>Does pomodoro help?</li>
+</ul>
+</div>
+</li>
+</ol>
 </div>
 
-<div id="outline-container-org5ba45d7" class="outline-3">
-<h3 id="org5ba45d7"><span class="section-number-3">3.8</span> Table</h3>
+<div id="outline-container-org3defc21" class="outline-3">
+<h3 id="org3defc21"><span class="section-number-3">3.8</span> Table</h3>
 <div class="outline-text-3" id="text-3-8">
 <ul class="org-ul">
 <li>Start table from menu</li>
@@ -581,22 +665,22 @@ See the documentation for details.
 </div>
 </div>
 
-<div id="outline-container-org23d1775" class="outline-3">
-<h3 id="org23d1775"><span class="section-number-3">3.9</span> Calendar</h3>
+<div id="outline-container-org8b642dd" class="outline-3">
+<h3 id="org8b642dd"><span class="section-number-3">3.9</span> Calendar</h3>
 <div class="outline-text-3" id="text-3-9">
 <p>
-How to view calendar (it was popping up accidantally when I hit something wrong)
+How to view calendar (it was popping up accidantally when I hit something wrong).
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgc64afaa" class="outline-3">
-<h3 id="orgc64afaa"><span class="section-number-3">3.10</span> Some other completed tasks</h3>
+<div id="outline-container-orgb2e9b05" class="outline-3">
+<h3 id="orgb2e9b05"><span class="section-number-3">3.10</span> Other actions</h3>
 <div class="outline-text-3" id="text-3-10">
 <ul class="org-ul">
 <li>Sort this list is C-c ^</li>
-<li>Add more cycling todo tags <code>#+SEQ_TODO:</code></li>
-<li>Archive tasks through menu</li>
+<li>Add cycling todo tags <code>#+SEQ_TODO:</code></li>
+<li>Archive tasks through Org menu</li>
 <li>Defintion list with <code>::</code> separator</li>
 <li>Github search for org files with <code>[[https://github.com/search?o=asc&amp;q=language%3Aorg&amp;s=indexed&amp;type=Code][language:org]]</code></li>
 <li>C-k C-y can move lines</li>
@@ -605,8 +689,8 @@ How to view calendar (it was popping up accidantally when I hit something wrong)
 </div>
 </div>
 
-<div id="outline-container-org9fe6c26" class="outline-2">
-<h2 id="org9fe6c26"><span class="section-number-2">4</span> <span class="todo WIP">WIP</span> Scenarios</h2>
+<div id="outline-container-org9cd1794" class="outline-2">
+<h2 id="org9cd1794"><span class="section-number-2">4</span> <span class="todo QUESTION">QUESTION</span> [A] Useful scenarios</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 What are productive scenarios for using org-mode?
@@ -626,12 +710,12 @@ Start with just a bunch of TODOs, and slowly grow the system as you feel the nee
 </div>
 </div>
 
-<div id="outline-container-org99861a0" class="outline-2">
-<h2 id="org99861a0"><span class="section-number-2">5</span> Reference</h2>
+<div id="outline-container-orgaae8ed1" class="outline-2">
+<h2 id="orgaae8ed1"><span class="section-number-2">5</span> Reference</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orga003945" class="outline-3">
-<h3 id="orga003945"><span class="section-number-3">5.1</span> Concepts</h3>
+<div id="outline-container-org2e7fd81" class="outline-3">
+<h3 id="org2e7fd81"><span class="section-number-3">5.1</span> Concepts</h3>
 <div class="outline-text-3" id="text-5-1">
 <dl class="org-dl">
 <dt>buffer</dt><dd>a screen that represents a file or Emacs own output</dd>
@@ -642,8 +726,8 @@ Start with just a bunch of TODOs, and slowly grow the system as you feel the nee
 </div>
 </div>
 
-<div id="outline-container-orgec7386f" class="outline-3">
-<h3 id="orgec7386f"><span class="section-number-3">5.2</span> Notation</h3>
+<div id="outline-container-orgf408bd9" class="outline-3">
+<h3 id="orgf408bd9"><span class="section-number-3">5.2</span> Notation</h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
 <li>* is a header</li>
@@ -653,12 +737,13 @@ Start with just a bunch of TODOs, and slowly grow the system as you feel the nee
 </div>
 </div>
 
-<div id="outline-container-org33f4591" class="outline-2">
-<h2 id="org33f4591"><span class="section-number-2">6</span> Links</h2>
+<div id="outline-container-orgb4514c0" class="outline-2">
+<h2 id="orgb4514c0"><span class="section-number-2">6</span> Links</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org0350601" class="outline-3">
-<h3 id="org0350601"><span class="section-number-3">6.1</span> Videos</h3>
+
+<div id="outline-container-org79255b8" class="outline-3">
+<h3 id="org79255b8"><span class="section-number-3">6.1</span> Videos</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 Essential:
@@ -688,28 +773,37 @@ Academic:
 </div>
 </div>
 
-<div id="outline-container-org0275990" class="outline-3">
-<h3 id="org0275990"><span class="section-number-3">6.2</span> Blogs and success stories</h3>
+<div id="outline-container-orgf935bac" class="outline-3">
+<h3 id="orgf935bac"><span class="section-number-3">6.2</span> Blogs and success stories</h3>
 <div class="outline-text-3" id="text-6-2">
 <ul class="org-ul">
 <li><a href="https://sachachua.com/blog/2014/01/tips-learning-org-mode-emacs/">https://sachachua.com/blog/2014/01/tips-learning-org-mode-emacs/</a></li>
 <li><a href="https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html">https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html</a></li>
 </ul>
 </div>
+
+<ol class="org-ol">
+<li><a id="org856df3f"></a><span class="todo TODO">TODO</span> [C] add images from sachachua.com<br /></li>
+<li><a id="orgd60a611"></a><span class="todo TODO">TODO</span> [C] redraw mindmap to simplify<br /></li>
+</ol>
 </div>
 
-<div id="outline-container-org1b431e0" class="outline-3">
-<h3 id="org1b431e0"><span class="section-number-3">6.3</span> Orgfiles on github</h3>
+<div id="outline-container-org19ad835" class="outline-3">
+<h3 id="org19ad835"><span class="section-number-3">6.3</span> Orgfiles on github</h3>
 <div class="outline-text-3" id="text-6-3">
 <ul class="org-ul">
 <li><a href="https://github.com/abcdw/notes/blob/master/notes/20210805075718-the_modern_emacs.org">https://github.com/abcdw/notes/blob/master/notes/20210805075718-the_modern_emacs.org</a></li>
+<li><a href="https://github.com/zkat/sheeple/blob/5393c74737ccf22c3fd5f390076b75c38453cb04/presentation/sheeple-talk-22-10-09.org">https://github.com/zkat/sheeple/blob/5393c74737ccf22c3fd5f390076b75c38453cb04/presentation/sheeple-talk-22-10-09.org</a></li>
+<li><a href="https://raw.githubusercontent.com/ymd-h/cpprb/c44cf5d53f807e58f71d1a2e1cf46aa92b5e193d/README.org">https://raw.githubusercontent.com/ymd-h/cpprb/c44cf5d53f807e58f71d1a2e1cf46aa92b5e193d/README.org</a></li>
+<li><a href="https://raw.githubusercontent.com/deopurkar/ag2021/f73c35fede17a123806102306ce0c47bc2a87cd9/course.org">https://raw.githubusercontent.com/deopurkar/ag2021/f73c35fede17a123806102306ce0c47bc2a87cd9/course.org</a></li>
+<li><a href="https://raw.githubusercontent.com/Literate-DevOps/literate-programming-tutorials/0dcff18ae2047fb46df1edc2cde7b2ea0cb57a12/how-to/01-assassinate-the-archbishop-of-canterbury-in-1170-ce/how-to-assassinate-the-archbishop-of-canterbury-in-1170-ce.org">https://raw.githubusercontent.com/Literate-DevOps/literate-programming-tutorials/0dcff18ae2047fb46df1edc2cde7b2ea0cb57a12/how-to/01-assassinate-the-archbishop-of-canterbury-in-1170-ce/how-to-assassinate-the-archbishop-of-canterbury-in-1170-ce.org</a></li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org6a18a30" class="outline-2">
-<h2 id="org6a18a30"><span class="section-number-2">7</span> Out of scope</h2>
+<div id="outline-container-org41f19a2" class="outline-2">
+<h2 id="org41f19a2"><span class="section-number-2">7</span> Out of scope</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 I try to avoid more complicated topics:
@@ -719,16 +813,20 @@ I try to avoid more complicated topics:
 <li>packages and complex configuration</li>
 <li>programming in lisp</li>
 <li>spacemacs, emacs-doom and similar</li>
+</ul>
+
+<ul class="org-ul">
 <li>org-roam</li>
 <li>org-capture</li>
 <li>email with gnus</li>
 <li>git with magit</li>
+<li>export to latex and beamer</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org15263a0" class="outline-2">
-<h2 id="org15263a0"><span class="section-number-2">8</span> Appendix. Key binding cheatsheet</h2>
+<div id="outline-container-org3107b7f" class="outline-2">
+<h2 id="org3107b7f"><span class="section-number-2">8</span> Appendix. Key binding cheatsheet</h2>
 <div class="outline-text-2" id="text-8">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -746,8 +844,18 @@ I try to avoid more complicated topics:
 </thead>
 <tbody>
 <tr>
+<td class="org-left">M-x &lt;command&gt;</td>
+<td class="org-left">Run command by name</td>
+</tr>
+
+<tr>
 <td class="org-left">M-x shell</td>
 <td class="org-left">Run Shell</td>
+</tr>
+
+<tr>
+<td class="org-left">F10</td>
+<td class="org-left">Upper menu</td>
 </tr>
 
 <tr>
@@ -768,11 +876,6 @@ I try to avoid more complicated topics:
 <tr>
 <td class="org-left">C-g</td>
 <td class="org-left">Kill, stop or exit</td>
-</tr>
-
-<tr>
-<td class="org-left">C-g</td>
-<td class="org-left">Exit</td>
 </tr>
 
 <tr>
@@ -801,12 +904,21 @@ I try to avoid more complicated topics:
 </tr>
 </tbody>
 </table>
+
+<p>
+M-x:
+</p>
+<ul class="org-ul">
+<li>revert-buffer (in File menu)</li>
+<li>customize</li>
+<li>shell</li>
+</ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Евгений Погребняк</p>
-<p class="date">Created: 2021-08-17 Tue 00:01</p>
+<p class="date">Created: 2021-08-17 Tue 09:18</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
