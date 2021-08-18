@@ -17,9 +17,10 @@ In this file I add new things I learn about Emacs and orgmode.
 - [X] WSL in terminal (I use cmder) with bash (Ubuntu)
 - [X] XServ graphics
 - [X] VSCode extension (no agenda view)
-- [ ] Windows Emacs MSI executable (bad Russian font spacing)
+- [X] Windows terminal executable (not WSL, just cmd/cmder) 
+- [ ] Windows MSI executable (bad Russian font spacing)
 
-# FIXME - exclide this from html output
+# FIXME - exclude this from html output
 :NOTE:
 Console vs teminal vs shell.
 :END:
@@ -58,17 +59,21 @@ Use just one, any of them:
 
   - [[https://emacsredux.com/blog/2020/09/23/using-emacs-on-windows-with-wsl2/][Original article with X410 recommendation]] 
   - On WSL 1 works at [[https://x410.dev/cookbook/wsl/using-x410-with-wsl2/][127.0.0.1]]
-  - One must buy X410 from Windows store (USD10 with discount), 
-    but it saves a ton of time for configuration, including the fonts.
+  - X410 is available form Windows Store (USD10 with discount), 
+    it saves a ton of time for configuration, including the fonts.
 
 **** QUESTION [A] Change keyboard layout in X410     
   - HELP NEEDED: cannot change [[https://x410.dev/cookbook/keyboard-layout/][keyboard layout]] 
                 to Russian in X410 - maybe need xfce.
 
-**** QUESTION [C] Startup behaviour change
-  - QUESTION: =EMACS FILENAME &= starts with two windows, 
-              how to disable the tutorial window (either .emacs or flag in command line)? 
-	      
+TODO: issue 1.
+
+*** Avoid screen with tutorial 
+
+Kill it with *C-x 1* or try =(setq inhibit-splash-screen t)=
+
+TODO: open .emacs in Emacs
+
 * Using Emacs
 
 ** Make a selection, copy and paste selection 
@@ -81,7 +86,7 @@ See =org-support-shift-select=.
 Unsure how it works on emacs, is it C-s? What about replace?
 Please recommend some tutorial on this?
 
-** QUESTION [B] Working with windows 
+** QUESTION [C] Working with windows 
 
 I currently use <Remove other windows> from File menu.
 Maybe I can do better.
@@ -100,7 +105,7 @@ Imagine I needed something like
 
 ~emacs README.md --run "C-c C-e h h"
 
-How would it do it?
+How would it do it? Using emacs lisp?
 
 ** DONE Refresh file from disk
 
@@ -301,7 +306,9 @@ I try to avoid more complicated topics:
 - git with magit 
 - export to latex and beamer
 	      
-* Appendix. Key binding cheatsheet
+* Appendix. 
+
+** Key binding cheatsheet
 
 | Command       | Action                |
 |---------------+-----------------------|
@@ -311,12 +318,16 @@ I try to avoid more complicated topics:
 | C-s           | Advanced search       |
 | C-c C-c       | Toggle or recalculate |
 | C-k C-y       | Kill and undo line    |
+| C-c C-e h h   | Create HTML           |
+| C-x 1         | Remove window         |
+| *Way out*     |                       |
 | C-g           | Kill, stop or exit    |
 | ESC-ESC-ESC   | Exit (hopefully)      |
 | q             | Exit (sometimes)      |
-| C-c C-e h h   | Create HTML           |
 | *Not Emacs:*  |                       |
 | Fn-Esc        | Lock Fn key (Lenovo)  |
+
+** Emacs commands
 
 M-x:
  - revert-buffer (in File menu)
