@@ -19,6 +19,7 @@ In this file I add new things I learn about Emacs and orgmode.
 - [X] VSCode extension (no agenda view)
 - [X] Windows terminal executable (not WSL, just cmd/cmder) 
 - [ ] Windows MSI executable (bad Russian font spacing)
+- [X] Mobile: Android + Termux + Emacs (You will probably need something like Hacker's Keyboard to input the shortcuts effectively)
 
 # FIXME - exclude this from html output
 :NOTE:
@@ -63,8 +64,8 @@ Use just one, any of them:
     it saves a ton of time for configuration, including the fonts.
 
 **** QUESTION [A] Change keyboard layout in X410     
-  - HELP NEEDED: cannot change [[https://x410.dev/cookbook/keyboard-layout/][keyboard layout]] 
-                to Russian in X410 - maybe need xfce.
+  - [[https://x410.dev/cookbook/keyboard-layout/][Selecting a Keyboard Layout]]
+  - This page details the use of the =setxkbmap= command to set X410 keyboard layout. By example, to set keyboard layout to Russian, the command is =setxkbmap ru=.
 
 TODO: issue 1.
 
@@ -94,6 +95,10 @@ Maybe I can do better.
 ** QUESTION [A] How to select a vertical block of text?
 
 Similar to Alt-Shift-arrows in Notepad++.
+
+- [[https://stackoverflow.com/questions/25065328/how-select-a-rectangle-in-emacs][How to select a rectangle in emacs]]
+  Most voted answer (53 votes) said that *C-x SPC* starts =rectangle-mark-mode= that is similar to the functionality you request from Notepad++, but with all the operations available to Emacs. The selected rectangle can be copied with *M-w* or killed with *C-w*, by example.
+  More information [[http://emacsredux.com/blog/2014/01/01/a-peek-at-emacs-24-dot-4-rectangular-selection/][here]].
 
 ** Run bash
 
@@ -157,10 +162,12 @@ M-x revert-buffer
 
   As [[https://orgmode.org/guide/Creating-Timestamps.html#Creating-Timestamps][guide]] suggests:
 
-    - C-c . for timestamp
-    - S-arrow for change
+    - *C-c .* for active date-only timestamp (Active = it creates an entry on Org agenda)
+    - *C-c !* for inactive date-only timestamp (Inactive = it doesn't create entries on Org agenda)
+    - *S-arrow* for change
 
 **** QUESTION [A] How to put a timestamp with time, not just date?
+    - *C-u C-c .* and *C-u C-c !* for timestamp including date and time, active and inactive respectively
 
 ** Checkboxes
 
@@ -182,11 +189,36 @@ M-x revert-buffer
  
 **** QUESTION [A] Unsolved about agenda:
 
-    - [ ] Why is C-c a undefined? Shoud I define it?
+    - [X] Why is C-c a undefined? Shoud I define it?
+      Seems to be undefined by default, but [[https://orgmode.org/guide/Introduction.html#Activation][this page of the Org mode guide]] says that with =(global-set-key (kbd "C-c a") 'org-agenda)= can be set. If the keyboard shortcut isn't activated, you can activate the agenda view manually with *M-x org-agenda*.
     - [ ] How to sort agenda by priority?
-    - [ ] How to close agenda buffer?
-    - [ ] How to move across buffers?
-
+      [[https://emacs.stackexchange.com/questions/32430/how-to-sort-habits-by-priority-in-the-org-agenda-view][This Emacs Stackexchange question]] shows Emacs-Lisp code to make sorting by priority the default in agenda view
+      #+BEGIN_SRC emacs-lisp
+	(defun hw-org-agenda-sort-habits (a b)
+	  "Sort habits first by user priority, then by schedule+deadline+consistency."
+	  (let ((ha (get-text-property 1 'org-habit-p a))
+		(hb (get-text-property 1 'org-habit-p b)))
+	    (when (and ha hb)
+	      (let ((pa (org-get-priority a))
+		    (pb (org-get-priority b)))
+		(cond ((> pa pb) +1)
+		      ((< pa pb) -1)
+		      ((= pa pb) (org-cmp-values a b 'priority)))))))
+	(setq org-agenda-cmp-user-defined 'hw-org-agenda-sort-habits
+	      org-agenda-sorting-strategy '((agenda time-up user-defined-down habit-down)
+					    (todo priority-down category-keep)
+					    (tags priority-down category-keep)
+										(search category-keep)))
+      #+END_SRC
+    - [X] How to close agenda buffer?
+      In Emacs you close a buffer with *C-x k*
+    - [X] How to move across buffers?
+      - *C-x o* move to the other window
+      - *C-x 1* maximixe current buffer
+      - *C-x 2* split current window vertically
+      - *C-x 3* split current window horizontally
+      - *C-x b* ask for the name of a buffer and display it in current window
+      - *C-x B* split current window and show a buffer list in the other window
 
 ** Clocking
     :LOGBOOK:
@@ -207,7 +239,7 @@ M-x revert-buffer
 
 **** QUESTION [B] What are useful habit with clocking?
 
-  - Does pomodoro help?
+  - Does pomodoro help? /In the same way the body cannot sustain exercise indefinitely, but needs to rest after a period of sustained effort, so does the brain. So pomodoro is a good practice, but you need to tailor the focus and rest periods to your personal optimum./
    
 ** Table
 
@@ -238,6 +270,12 @@ The best advice I've heard for using org-mode in some sort of GTD system
 was not to try and set up categories when you start. 
 Start with just a bunch of TODOs, and slowly grow the system as you feel the need to.
 #+END_QUOTE
+
+- As a general notebook for brainstorming and keeping interesting ideas at hand.
+- Org mode can execute code in several programming languages, so it can also be used to automate tasks that require collections of scripts.
+- It can even be used as database client for SQL databases, and the result of SQL queries can be shown in Org tables.
+- To measure your productivity by tabulating hourly, weekly, daily views on your clock-ins and clock-outs.
+- Alongside existing productivity methodologies like GTD
 
 * Reference
 ** Concepts
@@ -333,3 +371,4 @@ M-x:
  - revert-buffer (in File menu)
  - customize
  - shell
+ - query-replace-regexp (Asks for a regular expression, replaces it, its very powerful to automate editing tasks)
