@@ -14,9 +14,7 @@ In this file I add new things I learn about Emacs and orgmode.
 
 ** Options to run Emacs
 
-Pure Windows:
-
-- Windows executable (not WSL, just from shell):
+Pure Windows - Windows executable (not WSL, just from shell):
   - =emacs.exe= starts GUI (Russian font ok, preferred option) 
   - =emacs.exe -nw= for text mode
   - =runemacs.exe= (runs GUI, has issue with bad Russian font spacing)
@@ -26,8 +24,8 @@ WSL:
   - XServ graphics (X410) - pipeline to start a bit complex
 
 VSCode extension:
-  - syntax highlighing and some 
-  - (no agenda view)
+  - syntax highlighing and some commands
+  - no agenda view
 
 Mobile:
   - Android + Termux + Emacs (You will probably need something like Hacker's Keyboard to input the shortcuts effectively)
@@ -77,7 +75,8 @@ Use just one, any of them:
   - X410 is available form Windows Store (USD10 with discount), 
     it saves a ton of time for configuration, including the fonts.
 
-*** Change keyboard layout in X410     
+*** Change keyboard layout in X410 
+    
   - [[https://x410.dev/cookbook/keyboard-layout/][Selecting a Keyboard Layout]]
   - This page details the use of the =setxkbmap= command to set X410 keyboard layout. By example, to set keyboard layout to Russian, the command is =setxkbmap ru=.
 
